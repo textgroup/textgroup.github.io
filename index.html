@@ -1,0 +1,1017 @@
+---
+layout: page
+title: TextGroup
+subtitle: Language, cognition, and text — across disciplines
+full-width: true
+---
+
+<style>
+/* ── Reset box model ── */
+*, *::before, *::after { box-sizing: border-box; }
+
+/* ── CSS Variables ── */
+:root {
+  --ink: #1a1814;
+  --ink-mid: #4a4845;
+  --ink-muted: #8a8784;
+  --paper: #f8f6f1;
+  --paper-warm: #f0ede6;
+  --rule: #ddd9d0;
+  --accent: #2d5a3d;
+  --accent-light: #e8f0eb;
+  --accent-mid: #4a7c5f;
+  --gold: #b87c2b;
+  --gold-light: #f5edd8;
+  --serif: Georgia, 'Times New Roman', serif;
+  --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --mono: 'Courier New', Courier, monospace;
+}
+
+/* ── Override Beautiful Jekyll page chrome ── */
+.container { max-width: 100% !important; padding: 0 !important; }
+.col-xl-8, .col-lg-8 { max-width: 100% !important; flex: 0 0 100% !important; }
+
+/* ── HERO ── */
+.tg-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 82vh;
+  background: var(--paper);
+}
+.tg-hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5rem 4rem 5rem 5%;
+  border-right: 1px solid var(--rule);
+}
+.tg-eyebrow {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.25rem;
+  font-family: var(--mono);
+}
+.tg-headline {
+  font-family: var(--serif);
+  font-size: clamp(2.8rem, 4.5vw, 5rem);
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  margin: 0 0 1.25rem;
+  font-style: normal;
+  border: none;
+}
+.tg-headline em {
+  font-style: italic;
+  color: var(--accent);
+}
+.tg-desc {
+  font-size: 1.05rem;
+  color: var(--ink-mid);
+  max-width: 40ch;
+  line-height: 1.75;
+  margin-bottom: 2rem;
+  font-family: var(--sans);
+}
+.tg-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--accent);
+  color: #fff !important;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.7rem 1.4rem;
+  border-radius: 3px;
+  text-decoration: none !important;
+  letter-spacing: 0.02em;
+  width: fit-content;
+  font-family: var(--sans);
+}
+.tg-cta:hover { background: var(--accent-mid) !important; color: #fff !important; }
+
+.tg-hero-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 3rem;
+  background: var(--paper-warm);
+}
+.tg-topics-label {
+  font-size: 0.65rem;
+  color: var(--ink-muted);
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-family: var(--mono);
+}
+.tg-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 2rem;
+}
+.tg-tag {
+  font-size: 0.78rem;
+  padding: 0.3rem 0.75rem;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  color: var(--ink-mid);
+  background: var(--paper);
+  font-family: var(--sans);
+}
+.tg-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+}
+.tg-stat {
+  background: var(--paper-warm);
+  padding: 1.5rem;
+}
+.tg-stat-num {
+  font-family: var(--serif);
+  font-size: 2.6rem;
+  line-height: 1;
+  color: var(--ink);
+  letter-spacing: -0.04em;
+  margin-bottom: 0.3rem;
+}
+.tg-stat-label {
+  font-size: 0.72rem;
+  color: var(--ink-muted);
+  letter-spacing: 0.04em;
+  font-family: var(--sans);
+}
+
+/* ── SECTION WRAPPER ── */
+.tg-section {
+  padding: 4rem 5%;
+  background: var(--paper);
+}
+.tg-section.warm {
+  background: var(--paper-warm);
+}
+.tg-section.dark {
+  background: var(--ink);
+  color: var(--paper);
+}
+.tg-section-rule {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+}
+.tg-section-num {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--accent);
+  letter-spacing: 0.06em;
+}
+.tg-section.dark .tg-section-num { color: var(--accent-mid); }
+.tg-section-title {
+  font-family: var(--serif);
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+.tg-section.dark .tg-section-title { color: var(--paper); }
+.tg-section-rule::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
+  margin-left: 0.75rem;
+}
+.tg-section.dark .tg-section-rule::after { background: #333; }
+
+/* ── MEMBERS ── */
+.tg-members-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+.tg-member-card {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 1.5rem;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.tg-member-card:hover {
+  border-color: var(--accent-mid);
+  transform: translateY(-2px);
+}
+.tg-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 2px solid var(--rule);
+  margin-bottom: 0.875rem;
+  background: var(--accent-light);
+  display: block;
+}
+.tg-member-name {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  color: var(--ink);
+  margin: 0 0 0.2rem;
+  padding: 0;
+  border: none;
+}
+.tg-member-affil {
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+  margin: 0 0 0.75rem;
+  font-family: var(--sans);
+}
+.tg-member-bio {
+  font-size: 0.85rem;
+  color: var(--ink-mid);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  font-family: var(--sans);
+}
+.tg-member-link {
+  font-size: 0.78rem;
+  color: var(--accent) !important;
+  font-weight: 600;
+  text-decoration: none !important;
+  font-family: var(--sans);
+}
+.tg-member-link:hover { text-decoration: underline !important; }
+
+/* ── SESSIONS ── */
+.tg-filter-bar {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+.tg-filter-btn {
+  font-size: 0.78rem;
+  padding: 0.3rem 0.875rem;
+  border: 1px solid var(--rule);
+  background: transparent;
+  color: var(--ink-mid);
+  border-radius: 2px;
+  cursor: pointer;
+  font-family: var(--sans);
+  transition: all 0.15s;
+}
+.tg-filter-btn.active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+.tg-filter-btn:hover:not(.active) {
+  border-color: var(--accent-mid);
+  color: var(--accent);
+}
+.tg-sessions-list { display: flex; flex-direction: column; }
+.tg-session-row {
+  display: grid;
+  grid-template-columns: 105px 1fr 160px;
+  gap: 1.25rem;
+  align-items: start;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+.tg-session-row:first-child { border-top: 1px solid var(--rule); }
+.tg-session-row.upcoming {
+  background: var(--gold-light);
+  padding-left: 0.875rem;
+  padding-right: 0.875rem;
+  border-radius: 4px;
+  margin: 0 -0.875rem;
+  border-color: #e8d8b0;
+}
+.tg-session-date {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+  padding-top: 0.1rem;
+  white-space: nowrap;
+}
+.tg-session-row.upcoming .tg-session-date { color: var(--gold); }
+.tg-session-title {
+  font-size: 0.925rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0 0 0.2rem;
+  line-height: 1.4;
+  font-family: var(--sans);
+}
+.tg-session-presenter {
+  font-size: 0.825rem;
+  color: var(--ink-mid);
+  font-family: var(--sans);
+}
+.tg-session-affil {
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+  font-family: var(--sans);
+}
+.tg-session-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-top: 0.1rem;
+}
+.tg-yt-thumb {
+  display: block;
+  width: 148px;
+  border-radius: 3px;
+  overflow: hidden;
+  border: 1px solid var(--rule);
+  text-decoration: none !important;
+  position: relative;
+  transition: opacity 0.15s;
+}
+.tg-yt-thumb:hover { opacity: 0.82; }
+.tg-yt-thumb img { width: 100%; height: 83px; object-fit: cover; display: block; }
+.tg-yt-play {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.22);
+}
+.tg-yt-play svg { width: 30px; height: 30px; }
+.tg-badge-upcoming {
+  font-size: 0.7rem;
+  padding: 0.22rem 0.55rem;
+  border-radius: 2px;
+  font-weight: 600;
+  display: inline-block;
+  background: var(--gold-light);
+  color: var(--gold);
+  border: 1px solid #e8d8b0;
+  font-family: var(--sans);
+}
+
+/* ── CONTACT ── */
+.tg-contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+.tg-contact-body p {
+  font-size: 1rem;
+  color: #aaa;
+  line-height: 1.8;
+  margin-bottom: 1.1rem;
+  font-family: var(--sans);
+}
+.tg-contact-body a { color: var(--accent-mid) !important; text-decoration: underline !important; }
+.tg-contact-detail h3 {
+  font-family: var(--serif);
+  font-size: 0.95rem;
+  color: var(--paper);
+  margin: 0 0 0.875rem;
+  font-style: italic;
+  font-weight: 400;
+  padding: 0;
+  border: none;
+}
+.tg-drow {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid #333;
+  font-size: 0.875rem;
+  font-family: var(--sans);
+}
+.tg-drow:last-child { border-bottom: none; }
+.tg-dlabel { color: #777; }
+.tg-dval { color: var(--paper); }
+.tg-dval a { color: var(--accent-mid) !important; }
+
+.tg-hidden { display: none !important; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .tg-hero { grid-template-columns: 1fr; min-height: auto; }
+  .tg-hero-left { padding: 3rem 1.5rem; border-right: none; border-bottom: 1px solid var(--rule); }
+  .tg-hero-right { padding: 2rem 1.5rem; }
+  .tg-session-row { grid-template-columns: 1fr; gap: 0.4rem; }
+  .tg-session-actions { align-items: flex-start; }
+  .tg-contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .tg-section { padding: 3rem 1.5rem; }
+}
+</style>
+
+<!-- ══════════════ HERO ══════════════ -->
+<div class="tg-hero">
+  <div class="tg-hero-left">
+    <p class="tg-eyebrow">University of Minnesota &amp; Partners · Est. 2022</p>
+    <h2 class="tg-headline">Where<br><em>language</em><br>meets mind.</h2>
+    <p class="tg-desc">TextGroup is an interdisciplinary reading group at the intersection of psycholinguistics, cognitive science, NLP, and educational psychology. We meet biweekly to share and discuss work in progress.</p>
+    <a href="#sessions" class="tg-cta">Browse sessions ↓</a>
+  </div>
+  <div class="tg-hero-right">
+    <p class="tg-topics-label">Research areas</p>
+    <div class="tg-tags">
+      <span class="tg-tag">Psycholinguistics</span>
+      <span class="tg-tag">NLP &amp; LLMs</span>
+      <span class="tg-tag">Text Comprehension</span>
+      <span class="tg-tag">Cognitive Psychology</span>
+      <span class="tg-tag">Educational Psychology</span>
+      <span class="tg-tag">Discourse Processing</span>
+      <span class="tg-tag">Misinformation</span>
+      <span class="tg-tag">Eye Tracking</span>
+    </div>
+    <div class="tg-stats">
+      <div class="tg-stat"><div class="tg-stat-num">37+</div><div class="tg-stat-label">Sessions held</div></div>
+      <div class="tg-stat"><div class="tg-stat-num">12+</div><div class="tg-stat-label">Institutions</div></div>
+      <div class="tg-stat"><div class="tg-stat-num">2022</div><div class="tg-stat-label">Founded</div></div>
+      <div class="tg-stat"><div class="tg-stat-num">Bi&#8209;wkly</div><div class="tg-stat-label">Meeting cadence</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ MEMBERS ══════════════ -->
+<div class="tg-section warm">
+  <div class="tg-section-rule">
+    <span class="tg-section-num">01</span>
+    <h2 class="tg-section-title">Members</h2>
+  </div>
+  <div class="tg-members-grid">
+
+    <div class="tg-member-card">
+      <img class="tg-avatar" src="https://cse.umn.edu/sites/cse.umn.edu/files/styles/webp_scaled/public/260311_19I3922.jpg.webp?itok=b1IkhSFI" alt="Dongyeop Kang" onerror="this.style.display='none'">
+      <p class="tg-member-name">Dongyeop Kang</p>
+      <p class="tg-member-affil">University of Minnesota – CS &amp; Engineering</p>
+      <p class="tg-member-bio">Builds human-centric NLP systems through cognitively-aligned models and interactive AI that supports reading, writing, and reasoning.</p>
+      <a class="tg-member-link" href="https://dykang.github.io/" target="_blank">Homepage →</a>
+    </div>
+
+    <div class="tg-member-card">
+      <img class="tg-avatar" src="https://edpsych.umn.edu/sites/edpsych/files/styles/x_small_square/public/2025-07/unnamed%20%284%29.jpg?h=cd2a7045&itok=uwWHSt0W" alt="Varun Athilat" onerror="this.style.display='none'">
+      <p class="tg-member-name">Varun Athilat</p>
+      <p class="tg-member-affil">University of Minnesota – Educational Psychology</p>
+      <p class="tg-member-bio">Studies the interplay between text and emotion — how language shapes how we feel, and how feelings shape how we read.</p>
+    </div>
+
+    <div class="tg-member-card">
+      <img class="tg-avatar" src="https://www.cc.gatech.edu/sites/default/files/styles/profile_150x180_/public/images/profiles/2025-06/sashank_varma.jpg?itok=FDCfRanQ" alt="Sashank Varma" onerror="this.style.display='none'">
+      <p class="tg-member-name">Sashank Varma</p>
+      <p class="tg-member-affil">Georgia Tech – School of Interactive Computing</p>
+      <p class="tg-member-bio">Cognitive scientist investigating the alignment between how humans and LLMs understand language and perform cognitive tasks.</p>
+      <a class="tg-member-link" href="https://www.cc.gatech.edu/people/sashank-varma" target="_blank">Homepage →</a>
+    </div>
+
+    <div class="tg-member-card">
+      <img class="tg-avatar" src="https://www.ndsu.edu/sites/default/files/styles/content_profile_full_medium/public/2025-08/Milburn-Evelyn.jpg.webp?itok=-11xUzKE&cb=49e45658" alt="Evelyn Milburn" onerror="this.style.display='none'">
+      <p class="tg-member-name">Evelyn Milburn</p>
+      <p class="tg-member-affil">North Dakota State University – Psychology</p>
+      <p class="tg-member-bio">Investigates how we use knowledge beyond words to flexibly comprehend figurative language, language learning, and cognitive aging.</p>
+      <a class="tg-member-link" href="https://www.ndsu.edu/people/evelyn-milburn" target="_blank">Homepage →</a>
+    </div>
+
+  </div>
+  <p style="margin-top:1.5rem;font-size:0.8rem;color:var(--ink-muted);font-family:var(--sans);">
+    <a href="/members" style="color:var(--accent);">View full member profiles →</a>
+  </p>
+</div>
+
+<!-- ══════════════ SESSIONS ══════════════ -->
+<div class="tg-section" id="sessions">
+  <div class="tg-section-rule">
+    <span class="tg-section-num">02</span>
+    <h2 class="tg-section-title">Sessions</h2>
+  </div>
+
+  <div class="tg-filter-bar">
+    <button class="tg-filter-btn active" onclick="tgFilter('all',this)">All</button>
+    <button class="tg-filter-btn" onclick="tgFilter('upcoming',this)">Upcoming</button>
+    <button class="tg-filter-btn" onclick="tgFilter('2026',this)">2026</button>
+    <button class="tg-filter-btn" onclick="tgFilter('2025',this)">2025</button>
+    <button class="tg-filter-btn" onclick="tgFilter('2024',this)">2024</button>
+    <button class="tg-filter-btn" onclick="tgFilter('2022-2023',this)">2022–23</button>
+  </div>
+
+  <div class="tg-sessions-list">
+
+    <!-- ── UPCOMING ── -->
+    <div class="tg-session-row upcoming" data-year="2026" data-upcoming="true">
+      <div class="tg-session-date">May 7, 2026</div>
+      <div>
+        <div class="tg-session-title">TBD</div>
+        <div class="tg-session-presenter"><strong>Mija Van Der Wege</strong></div>
+        <div class="tg-session-affil">Carleton College – Psychology Department</div>
+      </div>
+      <div class="tg-session-actions"><span class="tg-badge-upcoming">Upcoming</span></div>
+    </div>
+
+    <div class="tg-session-row upcoming" data-year="2026" data-upcoming="true">
+      <div class="tg-session-date">Apr 23, 2026</div>
+      <div>
+        <div class="tg-session-title">TBD</div>
+        <div class="tg-session-presenter"><strong>Andrea Luangrath</strong></div>
+        <div class="tg-session-affil">University of Iowa – Tippie College of Business</div>
+      </div>
+      <div class="tg-session-actions"><span class="tg-badge-upcoming">Upcoming</span></div>
+    </div>
+
+    <!-- ── 2026 PAST ── -->
+    <div class="tg-session-row" data-year="2026">
+      <div class="tg-session-date">Apr 9, 2026</div>
+      <div>
+        <div class="tg-session-title"><a href="/2026-04-09-meeting/">Learning and Emotional Effects of Seductive Scientific Refutation Texts</a></div>
+        <div class="tg-session-presenter"><strong>Mike Mensink</strong></div>
+        <div class="tg-session-affil">University of Wisconsin – Psychology Department</div>
+      </div>
+      <div class="tg-session-actions"></div>
+    </div>
+
+    <div class="tg-session-row" data-year="2026">
+      <div class="tg-session-date">Mar 26, 2026</div>
+      <div>
+        <div class="tg-session-title"><a href="/2026-03-26-meeting/">Dissertation Work Regarding the Continued Influence Effect</a></div>
+        <div class="tg-session-presenter"><strong>Mandy Withall</strong></div>
+        <div class="tg-session-affil">Northwestern University – Department of Psychology</div>
+      </div>
+      <div class="tg-session-actions"></div>
+    </div>
+
+    <div class="tg-session-row" data-year="2026">
+      <div class="tg-session-date">Feb 26, 2026</div>
+      <div>
+        <div class="tg-session-title"><a href="/2026-02-26-meeting/">Prospectus Plan</a></div>
+        <div class="tg-session-presenter"><strong>Ali Fulsher</strong></div>
+        <div class="tg-session-affil">University of Minnesota – Educational Psychology</div>
+      </div>
+      <div class="tg-session-actions">
+        <a class="tg-yt-thumb" href="https://www.youtube.com/watch?v=JvP16Fr4m5I" target="_blank">
+          <img src="https://img.youtube.com/vi/JvP16Fr4m5I/mqdefault.jpg" alt="Watch recording" loading="lazy">
+          <div class="tg-yt-play"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="rgba(0,0,0,.5)"/><polygon points="10,8 17,12 10,16" fill="white"/></svg></div>
+        </a>
+      </div>
+    </div>
+
+    <div class="tg-session-row" data-year="2026">
+      <div class="tg-session-date">Jan 29, 2026</div>
+      <div>
+        <div class="tg-session-title"><a href="/2026-01-29-meeting/">Understanding Typographical/Paralingual Cues in Online Discourse</a></div>
+        <div class="tg-session-presenter"><strong>Varun Athilat</strong></div>
+        <div class="tg-session-affil">University of Minnesota – Educational Psychology</div>
+      </div>
+      <div class="tg-session-actions">
+        <a class="tg-yt-thumb" href="https://www.youtube.com/watch?v=cOjEVbOM89s" target="_blank">
+          <img src="https://img.youtube.com/vi/cOjEVbOM89s/mqdefault.jpg" alt="Watch recording" loading="lazy">
+          <div class="tg-yt-play"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="rgba(0,0,0,.5)"/><polygon points="10,8 17,12 10,16" fill="white"/></svg></div>
+        </a>
+      </div>
+    </div>
+
+    <!-- ── 2025 ── -->
+    <div class="tg-session-row" data-year="2025">
+      <div class="tg-session-date">Dec 3, 2025</div>
+      <div>
+        <div class="tg-session-title"><a href="/2025-12-03-meeting/">Emotional Intensity and Vague Frequency Expressions</a></div>
+        <div class="tg-session-presenter"><strong>Sid Horton</strong></div>
+        <div class="tg-session-affil">Northwestern University – Department of Psychology</div>
+      </div>
+      <div class="tg-session-actions">
+        <a class="tg-yt-thumb" href="https://www.youtube.com/watch?v=Lt4GV0Rtd9A" target="_blank">
+          <img src="https://img.youtube.com/vi/Lt4GV0Rtd9A/mqdefault.jpg" alt="Watch recording" loading="lazy">
+          <div class="tg-yt-play"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="rgba(0,0,0,.5)"/><polygon points="10,8 17,12 10,16" fill="white"/></svg></div>
+        </a>
+      </div>
+    </div>
+
+    <div class="tg-session-row" data-year="2025">
+      <div class="tg-session-date">Nov 5, 2025</div>
+      <div>
+        <div class="tg-session-title"><a href="/2025-11-05-meeting/">On AI and Cognitive Outcomes</a></div>
+        <div class="tg-session-presenter"><strong>Varun Athilat</strong></div>
+        <div class="tg-session-affil">University of Minnesota – Educational Psychology</div>
+      </div>
+      <div class="tg-session-actions">
+        <a class="tg-yt-thumb" href="https://www.youtube.com/watch?v=iB0g3vVvfGw" target="_blank">
+          <img src="https://img.youtube.com/vi/iB0g3vVvfGw/mqdefault.jpg" alt="Watch recording" loading="lazy">
+          <div class="tg-yt-play"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="rgba(0,0,0,.5)"/><polygon points="10,8 17,12 10,16" fill="white"/></svg></div>
+        </a>
+      </div>
+    </div>
+
+    <div class="tg-session-row" data-year="2025">
+      <div class="tg-session-date">Oct 8, 2025</div>
+      <div>
+        <div class="tg-session-title"><a href="/2025-10-08-meeting/">Cognition and Comprehension in Language Models</a></div>
+        <div class="tg-session-presenter"><strong>Karin de Langis</strong></div>
+        <div class="tg-session-affil">University of Minnesota – CS &amp; Engineering</div>
+      </div>
+      <div class="tg-session-actions">
+        <a class="tg-yt-thumb" href="https://www.youtube.com/watch?v=xPMm35QWRgg" target="_blank">
+          <img src="https://img.youtube.com/vi/xPMm35QWRgg/mqdefault.jpg" alt="Watch recording" loading="lazy">
+          <div class="tg-yt-play"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="rgba(0,0,0,.5)"/><polygon points="10,8 17,12 10,16" fill="white"/></svg></div>
+        </a>
+      </div>
+    </div>
+
+    <div class="tg-session-row" data-year="2025">
+      <div class="tg-session-date">Sep 24, 2025</div>
+      <div>
+        <div class="tg-session-title"><a href="/2025-09-24-meeting/">Introduction and Broad Research Discussion</a></div>
+        <div class="tg-session-presenter"><strong>Varun Athilat</strong></div>
+        <div class="tg-session-affil">University of Minnesota – Educational Psychology</div>
+      </div>
+      <div class="tg-session-actions">
+        <a class="tg-yt-thumb" href="https://www.youtube.com/watch?v=j4kaG5HVfM0" target="_blank">
+          <img src="https://img.youtube.com/vi/j4kaG5HVfM0/mqdefault.jpg" alt="Watch recording" loading="lazy">
+          <div class="tg-yt-play"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="rgba(0,0,0,.5)"/><polygon points="10,8 17,12 10,16" fill="white"/></svg></div>
+        </a>
+      </div>
+    </div>
+
+    <div class="tg-session-row" data-year="2025">
+      <div class="tg-session-date">Apr 24, 2025</div>
+      <div>
+        <div class="tg-session-title"><a href="/2025-04-24-meeting/">Keystroke Logging in Psycholinguistics Research</a></div>
+        <div class="tg-session-presenter"><strong>Lake Chau</strong></div>
+        <div class="tg-session-affil">University of Minnesota – Educational Psychology</div>
+      </div>
+      <div class="tg-session-actions">
+        <a class="tg-yt-thumb" href="https://www.youtube.com/watch?v=FAw_wPRFOM8" target="_blank">
+          <img src="https://img.youtube.com/vi/FAw_wPRFOM8/mqdefault.jpg" alt="Watch recording" loading="lazy">
+          <div class="tg-yt-play"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="rgba(0,0,0,.5)"/><polygon points="10,8 17,12 10,16" fill="white"/></svg></div>
+        </a>
+      </div>
+    </div>
+
+    <div class="tg-session-row" data-year="2025">
+      <div class="tg-session-date">Apr 10, 2025</div>
+      <div>
+        <div class="tg-session-title"><a href="/2025-04-10-meeting/">Modeling Metacognition with NLP</a></div>
+        <div class="tg-session-presenter"><strong>Miranda Moe</strong></div>
+        <div class="tg-session-affil">University of Minnesota – Educational Psychology</div>
+      </div>
+      <div class="tg-session-actions">
+        <a class="tg-yt-thumb" href="https://www.youtube.com/watch?v=F_u3wAYcKtg" target="_blank">
+          <img src="https://img.youtube.com/vi/F_u3wAYcKtg/mqdefault.jpg" alt="Watch recording" loading="lazy">
+          <div class="tg-yt-play"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="rgba(0,0,0,.5)"/><polygon points="10,8 17,12 10,16" fill="white"/></svg></div>
+        </a>
+      </div>
+    </div>
+
+    <div class="tg-session-row" data-year="2025">
+      <div class="tg-session-date">Mar 27, 2025</div>
+      <div>
+        <div class="tg-session-title"><a href="/2025-03-27-meeting/">Language Bias and Equity in LLMs</a></div>
+        <div class="tg-session-presenter"><strong>Jaclyn Ocumpaugh</strong></div>
+        <div class="tg-session-affil">University of Houston – College of Education</div>
+      </div>
+      <div class="tg-session-actions"></div>
+    </div>
+
+    <div class="tg-session-row" data-year="2025">
+      <div class="tg-session-date">Feb 27, 2025</div>
+      <div>
+        <div class="tg-session-title"><a href="/2025-02-27-meeting/">Trust in Science Research</a></div>
+        <div class="tg-session-presenter"><strong>Victoria Johnson</strong></div>
+        <div class="tg-session-affil">University of Minnesota – Educational Psychology</div>
+      </div>
+      <div class="tg-session-actions"></div>
+    </div>
+
+    <!-- ── 2024 ── -->
+    <div class="tg-session-row" data-year="2024">
+      <div class="tg-session-date">Dec 10, 2024</div>
+      <div>
+        <div class="tg-session-title"><a href="/2024-12-10-meeting/">Initial CogBench Results</a></div>
+        <div class="tg-session-presenter"><strong>Andreas Schramm</strong></div>
+        <div class="tg-session-affil">Hamline University</div>
+      </div>
+      <div class="tg-session-actions">
+        <a class="tg-yt-thumb" href="https://www.youtube.com/watch?v=cA0GyLB6PRk" target="_blank">
+          <img src="https://img.youtube.com/vi/cA0GyLB6PRk/mqdefault.jpg" alt="Watch recording" loading="lazy">
+          <div class="tg-yt-play"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="rgba(0,0,0,.5)"/><polygon points="10,8 17,12 10,16" fill="white"/></svg></div>
+        </a>
+      </div>
+    </div>
+
+    <div class="tg-session-row" data-year="2024">
+      <div class="tg-session-date">Nov 26, 2024</div>
+      <div>
+        <div class="tg-session-title"><a href="/2024-11-26-meeting/">A Conversation with Andy Zieffler</a></div>
+        <div class="tg-session-presenter"><strong>Andy Zieffler</strong></div>
+        <div class="tg-session-affil">University of Minnesota – Educational Psychology</div>
+      </div>
+      <div class="tg-session-actions">
+        <a class="tg-yt-thumb" href="https://www.youtube.com/watch?v=nmMDdpif-qs" target="_blank">
+          <img src="https://img.youtube.com/vi/nmMDdpif-qs/mqdefault.jpg" alt="Watch recording" loading="lazy">
+          <div class="tg-yt-play"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="rgba(0,0,0,.5)"/><polygon points="10,8 17,12 10,16" fill="white"/></svg></div>
+        </a>
+      </div>
+    </div>
+
+    <div class="tg-session-row" data-year="2024">
+      <div class="tg-session-date">Nov 12, 2024</div>
+      <div>
+        <div class="tg-session-title"><a href="/2024-11-12-meeting/">"Mary is a Vegetarian"</a></div>
+        <div class="tg-session-presenter"><strong>Rina Harsch</strong></div>
+        <div class="tg-session-affil">University of Minnesota – Educational Psychology</div>
+      </div>
+      <div class="tg-session-actions">
+        <a class="tg-yt-thumb" href="https://www.youtube.com/watch?v=TJthAGHa6tk" target="_blank">
+          <img src="https://img.youtube.com/vi/TJthAGHa6tk/mqdefault.jpg" alt="Watch recording" loading="lazy">
+          <div class="tg-yt-play"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="rgba(0,0,0,.5)"/><polygon points="10,8 17,12 10,16" fill="white"/></svg></div>
+        </a>
+      </div>
+    </div>
+
+    <div class="tg-session-row" data-year="2024">
+      <div class="tg-session-date">Oct 29, 2024</div>
+      <div>
+        <div class="tg-session-title"><a href="/2024-10-29-meeting/">Introduction and Broad Research Discussion</a></div>
+        <div class="tg-session-presenter"><strong>Varun Athilat</strong></div>
+        <div class="tg-session-affil">University of Minnesota – Educational Psychology</div>
+      </div>
+      <div class="tg-session-actions">
+        <a class="tg-yt-thumb" href="https://www.youtube.com/watch?v=ezaCFQ85XcY" target="_blank">
+          <img src="https://img.youtube.com/vi/ezaCFQ85XcY/mqdefault.jpg" alt="Watch recording" loading="lazy">
+          <div class="tg-yt-play"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="rgba(0,0,0,.5)"/><polygon points="10,8 17,12 10,16" fill="white"/></svg></div>
+        </a>
+      </div>
+    </div>
+
+    <div class="tg-session-row" data-year="2024">
+      <div class="tg-session-date">May 10, 2024</div>
+      <div>
+        <div class="tg-session-title"><a href="/2024-05-10-meeting/">Help me update the Author Recognition Test!</a></div>
+        <div class="tg-session-presenter"><strong>Ariel N. James</strong></div>
+        <div class="tg-session-affil">Macalester College – Psychology Department</div>
+      </div>
+      <div class="tg-session-actions">
+        <a class="tg-yt-thumb" href="https://www.youtube.com/watch?v=HgAq9HjxFKI" target="_blank">
+          <img src="https://img.youtube.com/vi/HgAq9HjxFKI/mqdefault.jpg" alt="Watch recording" loading="lazy">
+          <div class="tg-yt-play"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="rgba(0,0,0,.5)"/><polygon points="10,8 17,12 10,16" fill="white"/></svg></div>
+        </a>
+      </div>
+    </div>
+
+    <div class="tg-session-row" data-year="2024">
+      <div class="tg-session-date">May 5, 2024</div>
+      <div>
+        <div class="tg-session-title"><a href="/2024-05-05-meeting/">The Effects of Seductive Details on Emotions and Recall for Scientific Misconceptions</a></div>
+        <div class="tg-session-presenter"><strong>Mike Mensink</strong></div>
+        <div class="tg-session-affil">University of Wisconsin – Psychology Department</div>
+      </div>
+      <div class="tg-session-actions">
+        <a class="tg-yt-thumb" href="https://www.youtube.com/watch?v=CsssIJ0QJGk" target="_blank">
+          <img src="https://img.youtube.com/vi/CsssIJ0QJGk/mqdefault.jpg" alt="Watch recording" loading="lazy">
+          <div class="tg-yt-play"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="rgba(0,0,0,.5)"/><polygon points="10,8 17,12 10,16" fill="white"/></svg></div>
+        </a>
+      </div>
+    </div>
+
+    <div class="tg-session-row" data-year="2024">
+      <div class="tg-session-date">Apr 26, 2024</div>
+      <div>
+        <div class="tg-session-title"><a href="/2024-04-26-meeting/">Evaluating Quantitative Theories in Sentence Processing</a></div>
+        <div class="tg-session-presenter"><strong>Suhas Arehalli</strong></div>
+        <div class="tg-session-affil">Macalester College – Cognitive Science</div>
+      </div>
+      <div class="tg-session-actions">
+        <a class="tg-yt-thumb" href="https://www.youtube.com/watch?v=_qKR0HR12JE" target="_blank">
+          <img src="https://img.youtube.com/vi/_qKR0HR12JE/mqdefault.jpg" alt="Watch recording" loading="lazy">
+          <div class="tg-yt-play"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="rgba(0,0,0,.5)"/><polygon points="10,8 17,12 10,16" fill="white"/></svg></div>
+        </a>
+      </div>
+    </div>
+
+    <div class="tg-session-row" data-year="2024">
+      <div class="tg-session-date">Apr 12, 2024</div>
+      <div>
+        <div class="tg-session-title"><a href="/2024-04-12-meeting/">Toward scalable eye movement data for NLP applications</a></div>
+        <div class="tg-session-presenter"><strong>Karin de Langis</strong></div>
+        <div class="tg-session-affil">University of Minnesota – CS &amp; Engineering</div>
+      </div>
+      <div class="tg-session-actions">
+        <a class="tg-yt-thumb" href="https://www.youtube.com/watch?v=EPkLCDYHSTE" target="_blank">
+          <img src="https://img.youtube.com/vi/EPkLCDYHSTE/mqdefault.jpg" alt="Watch recording" loading="lazy">
+          <div class="tg-yt-play"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="rgba(0,0,0,.5)"/><polygon points="10,8 17,12 10,16" fill="white"/></svg></div>
+        </a>
+      </div>
+    </div>
+
+    <div class="tg-session-row" data-year="2024">
+      <div class="tg-session-date">Mar 29, 2024</div>
+      <div>
+        <div class="tg-session-title"><a href="/2024-03-29-meeting/">On the way to boundedness: From givenness to lexical aspectual classes</a></div>
+        <div class="tg-session-presenter"><strong>Andreas Schramm</strong></div>
+        <div class="tg-session-affil">Hamline University</div>
+      </div>
+      <div class="tg-session-actions">
+        <a class="tg-yt-thumb" href="https://www.youtube.com/watch?v=YzKggxz4qZ4" target="_blank">
+          <img src="https://img.youtube.com/vi/YzKggxz4qZ4/mqdefault.jpg" alt="Watch recording" loading="lazy">
+          <div class="tg-yt-play"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="rgba(0,0,0,.5)"/><polygon points="10,8 17,12 10,16" fill="white"/></svg></div>
+        </a>
+      </div>
+    </div>
+
+    <div class="tg-session-row" data-year="2024">
+      <div class="tg-session-date">Mar 21, 2024</div>
+      <div>
+        <div class="tg-session-title"><a href="/2024-03-21-meeting/">The cognitive and developmental alignment of language models</a></div>
+        <div class="tg-session-presenter"><strong>Sashank Varma</strong></div>
+        <div class="tg-session-affil">Georgia Institute of Technology – College of Computing</div>
+      </div>
+      <div class="tg-session-actions">
+        <a class="tg-yt-thumb" href="https://www.youtube.com/watch?v=ps1SV37L1FQ" target="_blank">
+          <img src="https://img.youtube.com/vi/ps1SV37L1FQ/mqdefault.jpg" alt="Watch recording" loading="lazy">
+          <div class="tg-yt-play"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="rgba(0,0,0,.5)"/><polygon points="10,8 17,12 10,16" fill="white"/></svg></div>
+        </a>
+      </div>
+    </div>
+
+    <!-- ── 2022–2023 ── -->
+    <div class="tg-session-row" data-year="2022-2023">
+      <div class="tg-session-date">Mar 29, 2023</div>
+      <div>
+        <div class="tg-session-title"><a href="/2023-03-29-meeting/">In-text citations: Burden, benefit, or irrelevant for multitext comprehension?</a></div>
+        <div class="tg-session-presenter"><strong>Ali Fulsher</strong></div>
+        <div class="tg-session-affil">University of Minnesota – Educational Psychology</div>
+      </div>
+      <div class="tg-session-actions">
+        <a class="tg-yt-thumb" href="https://www.youtube.com/watch?v=lJCZo8cAy-k" target="_blank">
+          <img src="https://img.youtube.com/vi/lJCZo8cAy-k/mqdefault.jpg" alt="Watch recording" loading="lazy">
+          <div class="tg-yt-play"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="rgba(0,0,0,.5)"/><polygon points="10,8 17,12 10,16" fill="white"/></svg></div>
+        </a>
+      </div>
+    </div>
+
+    <div class="tg-session-row" data-year="2022-2023">
+      <div class="tg-session-date">Mar 1, 2023</div>
+      <div>
+        <div class="tg-session-title"><a href="/2023-03-01-meeting/">Trustworthiness, Expertise, and Credibility Perceptions of Scientists</a></div>
+        <div class="tg-session-presenter"><strong>Victoria Johnson</strong></div>
+        <div class="tg-session-affil">University of Minnesota – Educational Psychology</div>
+      </div>
+      <div class="tg-session-actions">
+        <a class="tg-yt-thumb" href="https://www.youtube.com/watch?v=sNycySxKggo" target="_blank">
+          <img src="https://img.youtube.com/vi/sNycySxKggo/mqdefault.jpg" alt="Watch recording" loading="lazy">
+          <div class="tg-yt-play"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="rgba(0,0,0,.5)"/><polygon points="10,8 17,12 10,16" fill="white"/></svg></div>
+        </a>
+      </div>
+    </div>
+
+    <div class="tg-session-row" data-year="2022-2023">
+      <div class="tg-session-date">Apr 26, 2022</div>
+      <div>
+        <div class="tg-session-title"><a href="/2022-04-26-meeting/">Exploring the Influence of Linguistic Forms in Headlines on Click and Share Intentions</a></div>
+        <div class="tg-session-presenter"><strong>Yewon Kang</strong></div>
+        <div class="tg-session-affil">University of Minnesota – Educational Psychology</div>
+      </div>
+      <div class="tg-session-actions">
+        <a class="tg-yt-thumb" href="https://www.youtube.com/watch?v=dIIoi2GSm-M" target="_blank">
+          <img src="https://img.youtube.com/vi/dIIoi2GSm-M/mqdefault.jpg" alt="Watch recording" loading="lazy">
+          <div class="tg-yt-play"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="rgba(0,0,0,.5)"/><polygon points="10,8 17,12 10,16" fill="white"/></svg></div>
+        </a>
+      </div>
+    </div>
+
+    <div class="tg-session-row" data-year="2022-2023">
+      <div class="tg-session-date">Apr 25, 2022</div>
+      <div>
+        <div class="tg-session-title"><a href="/2022-04-25-meeting/">Text-to-Tree</a></div>
+        <div class="tg-session-presenter"><strong>London Lowmanstone IV</strong></div>
+        <div class="tg-session-affil">University of Minnesota – CS &amp; Engineering</div>
+      </div>
+      <div class="tg-session-actions">
+        <a class="tg-yt-thumb" href="https://www.youtube.com/watch?v=EN32hWpSduE" target="_blank">
+          <img src="https://img.youtube.com/vi/EN32hWpSduE/mqdefault.jpg" alt="Watch recording" loading="lazy">
+          <div class="tg-yt-play"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="rgba(0,0,0,.5)"/><polygon points="10,8 17,12 10,16" fill="white"/></svg></div>
+        </a>
+      </div>
+    </div>
+
+    <div class="tg-session-row" data-year="2022-2023">
+      <div class="tg-session-date">Apr 18, 2022</div>
+      <div>
+        <div class="tg-session-title"><a href="/2022-04-18-meeting/">Predicting Narrative Engagement</a></div>
+        <div class="tg-session-presenter"><strong>Kelsey Neis</strong></div>
+        <div class="tg-session-affil">University of Minnesota – CS &amp; Engineering</div>
+      </div>
+      <div class="tg-session-actions">
+        <a class="tg-yt-thumb" href="https://www.youtube.com/watch?v=URQrJsihPQc" target="_blank">
+          <img src="https://img.youtube.com/vi/URQrJsihPQc/mqdefault.jpg" alt="Watch recording" loading="lazy">
+          <div class="tg-yt-play"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="rgba(0,0,0,.5)"/><polygon points="10,8 17,12 10,16" fill="white"/></svg></div>
+        </a>
+      </div>
+    </div>
+
+    <div class="tg-session-row" data-year="2022-2023">
+      <div class="tg-session-date">Apr 12, 2022</div>
+      <div>
+        <div class="tg-session-title"><a href="/2022-04-12-meeting/">What is language experience? Perspectives from sentence processing (Part 2 of 2)</a></div>
+        <div class="tg-session-presenter"><strong>Ariel N. James</strong></div>
+        <div class="tg-session-affil">Macalester College – Psychology Department</div>
+      </div>
+      <div class="tg-session-actions">
+        <a class="tg-yt-thumb" href="https://www.youtube.com/watch?v=k7YsByyCMBM" target="_blank">
+          <img src="https://img.youtube.com/vi/k7YsByyCMBM/mqdefault.jpg" alt="Watch recording" loading="lazy">
+          <div class="tg-yt-play"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="rgba(0,0,0,.5)"/><polygon points="10,8 17,12 10,16" fill="white"/></svg></div>
+        </a>
+      </div>
+    </div>
+
+    <div class="tg-session-row" data-year="2022-2023">
+      <div class="tg-session-date">Apr 11, 2022</div>
+      <div>
+        <div class="tg-session-title"><a href="/2022-04-11-meeting/">Saliency for Text Styles</a></div>
+        <div class="tg-session-presenter"><strong>Karin de Langis</strong></div>
+        <div class="tg-session-affil">University of Minnesota – CS &amp; Engineering</div>
+      </div>
+      <div class="tg-session-actions">
+        <a class="tg-yt-thumb" href="https://www.youtube.com/watch?v=5fG5D3GAFU0" target="_blank">
+          <img src="https://img.youtube.com/vi/5fG5D3GAFU0/mqdefault.jpg" alt="Watch recording" loading="lazy">
+          <div class="tg-yt-play"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="rgba(0,0,0,.5)"/><polygon points="10,8 17,12 10,16" fill="white"/></svg></div>
+        </a>
+      </div>
+    </div>
+
+    <div class="tg-session-row" data-year="2022-2023">
+      <div class="tg-session-date">Mar 15, 2022</div>
+      <div>
+        <div class="tg-session-title"><a href="/2022-03-15-meeting/">What is language experience? Perspectives from sentence processing (Part 1 of 2)</a></div>
+        <div class="tg-session-presenter"><strong>Ariel N. James</strong></div>
+        <div class="tg-session-affil">Macalester College – Psychology Department</div>
+      </div>
+      <div class="tg-session-actions">
+        <a class="tg-yt-thumb" href="https://www.youtube.com/watch?v=zLF0x_bKKW8" target="_blank">
+          <img src="https://img.youtube.com/vi/zLF0x_bKKW8/mqdefault.jpg" alt="Watch recording" loading="lazy">
+          <div class="tg-yt-play"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="rgba(0,0,0,.5)"/><polygon points="10,8 17,12 10,16" fill="white"/></svg></div>
+        </a>
+      </div>
+    </div>
+
+  </div><!-- end sessions list -->
+</div>
+
+<!-- ══════════════ CONTACT ══════════════ -->
+<div class="tg-section dark" id="contact">
+  <div class="tg-section-rule">
+    <span class="tg-section-num">03</span>
+    <h2 class="tg-section-title">Contact &amp; Join</h2>
+  </div>
+  <div class="tg-contact-grid">
+    <div class="tg-contact-body">
+      <p>TextGroup welcomes researchers at all career stages whose work touches on language, text, and cognition. Whether you study reading, NLP, psycholinguistics, or learning, there is likely a connection to be made.</p>
+      <p>To present your work, attend a session, or join our mailing list, reach out to the organizers below. Early-stage and in-progress work is especially encouraged.</p>
+    </div>
+    <div class="tg-contact-detail">
+      <h3>Organizers</h3>
+      <div class="tg-drow">
+        <span class="tg-dlabel">Varun Athilat</span>
+        <span class="tg-dval"><a href="mailto:athil003@umn.edu">athil003@umn.edu</a></span>
+      </div>
+      <div class="tg-drow">
+        <span class="tg-dlabel">Dongyeop Kang</span>
+        <span class="tg-dval"><a href="mailto:dongyeop@umn.edu">dongyeop@umn.edu</a></span>
+      </div>
+      <div class="tg-drow">
+        <span class="tg-dlabel">Schedule</span>
+        <span class="tg-dval">Biweekly, alternating Thursdays</span>
+      </div>
+      <div class="tg-drow">
+        <span class="tg-dlabel">Location</span>
+        <span class="tg-dval">University of Minnesota, Twin Cities</span>
+      </div>
+      <div class="tg-drow">
+        <span class="tg-dlabel">Recordings</span>
+        <span class="tg-dval"><a href="https://www.youtube.com/@textgroup/videos" target="_blank">YouTube channel →</a></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function tgFilter(year, btn) {
+  document.querySelectorAll('.tg-filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.tg-session-row').forEach(row => {
+    if (year === 'all') {
+      row.classList.remove('tg-hidden');
+    } else if (year === 'upcoming') {
+      row.classList.toggle('tg-hidden', row.dataset.upcoming !== 'true');
+    } else {
+      row.classList.toggle('tg-hidden', row.dataset.year !== year);
+    }
+  });
+}
+</script>

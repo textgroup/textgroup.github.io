@@ -1,0 +1,61 @@
+# ========== SITE SETTINGS ==========
+title: TextGroup
+description: An interdisciplinary reading group at the intersection of psycholinguistics, cognitive science, NLP, and educational psychology. University of Minnesota & Partners.
+url: "https://textgroup.github.io"
+baseurl: ""
+
+# ========== NAVBAR ==========
+navbar-links:
+  About: "aboutme"
+  Sessions: ""
+  Members: "members"
+  YouTube: "https://www.youtube.com/@textgroup/videos"
+
+navbar-col: "#f8f6f1"
+navbar-text-col: "#2d5a3d"
+navbar-border-col: "#ddd9d0"
+navbar-logo-img: ""
+
+# ========== FOOTER ==========
+footer-links-active:
+  rss: false
+  facebook: false
+  email: true
+  github: true
+  twitter: false
+  youtube: true
+  linkedin: false
+
+social-network-links:
+  email: "athil003@umn.edu"
+  github: textgroup
+  youtube: "@textgroup"
+
+footer-col: "#1a1814"
+footer-text-col: "#8a8784"
+footer-link-col: "#4a7c5f"
+
+# ========== AUTHOR ==========
+author: TextGroup
+avatar-img: /assets/img/textgroup-avatar.png
+
+# ========== PAGE DEFAULTS ==========
+page-col: "#f8f6f1"
+link-col: "#2d5a3d"
+hover-col: "#4a7c5f"
+h1-size: 2.2rem
+h2-size: 1.6rem
+h3-size: 1.2rem
+
+# ========== BLOG FEED ==========
+paginate: 10
+paginate_path: "/page:num/"
+
+# ========== PLUGINS ==========
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+
+# ========== MARKDOWN ==========
+markdown: kramdown
+highlighter: rouge
