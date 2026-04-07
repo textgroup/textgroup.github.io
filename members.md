@@ -134,20 +134,31 @@ subtitle: Researchers in TextGroup
   </div>
 
   <div class="member-card">
-    <img class="member-avatar" src="" alt="Andreas Schramm" onerror="this.style.display='none'">
+    <img class="member-avatar" src="https://drive.google.com/thumbnail?id=1CHfdQE11UsN-tJ2MkDDidyWcpwg49ztj&sz=w400" alt="Andreas Schramm" onerror="this.style.display='none'">
     <span class="member-role">Faculty Lead</span>
     <p class="member-name">Andreas Schramm</p>
-    <p class="member-affil">Hamline University – School of Education (TESOL &amp; Linguistics)</p>
-    <p class="member-bio">Professor of linguistics in the Second Languages Teaching and Learning program. Research centers on functional linguistics, second-language learning, and — most recently — how large language models comprehend narrative structure.</p>
+    <p class="member-affil">Hamline University – Professor Emeritus</p>
+    <p class="member-bio">Researches the cognitive processing and acquisition of time in language — the system of linguistic expressions for meanings articulating the probability of events.</p>
+    <div class="member-papers">
+      <h4>Selected works</h4>
+      <ul>
+        <li>How LLMs comprehend temporal meaning in narratives – ACL 2025</li>
+        <li>Implicit textually enhanced processing of aspectual meanings in English learners – Discourse Processes, 2022</li>
+        <li>It is time to tackle aspect! – MinneTESOL Journal, 2017</li>
+        <li>Processing of aspectual meanings by non-native and native English speakers – Benjamins, 2016</li>
+      </ul>
+    </div>
+    <a class="member-link" href="https://sites.google.com/hamline.edu/andreas-schramm-professor-emer/home" target="_blank">Homepage →</a>
+    &nbsp;·&nbsp;
     <a class="member-link" href="mailto:aschramm@hamline.edu">aschramm@hamline.edu</a>
   </div>
 
   <div class="member-card">
-    <img class="member-avatar" src="https://edpsych.umn.edu/sites/edpsych/files/styles/x_small_square/public/2025-07/unnamed%20%284%29.jpg?h=cd2a7045&itok=uwWHSt0W" alt="Varun Athilat" onerror="this.style.display='none'">
+    <img class="member-avatar" src="https://drive.google.com/thumbnail?id=17GJeoHorRlS_57TyOdD6O0Wt8G047qyq&sz=w400" alt="Varun Athilat" onerror="this.style.display='none'">
     <span class="member-role">Student Lead</span>
     <p class="member-name">Varun Athilat</p>
-    <p class="member-affil">University of Minnesota – Educational Psychology</p>
-    <p class="member-bio">Studies the interplay between text and emotion — how language shapes how we feel, and how feelings shape how we read. Research spans multiple-document comprehension, persuasion, and typographical cues as proxies for prosody.</p>
+    <p class="member-affil">University of Minnesota – Twin Cities</p>
+    <p class="member-bio">Although people perceive text as being inherently less emotional than speech, text language still affects our emotions — and, funnily enough, how we feel can also influence the way we read. This interplay between text and emotions is what I love studying.</p>
     <a class="member-link" href="mailto:athil003@umn.edu">athil003@umn.edu</a>
   </div>
 
@@ -159,51 +170,80 @@ subtitle: Researchers in TextGroup
 <div class="member-grid">
 
   <div class="member-card">
-    <img class="member-avatar" src="https://cse.umn.edu/sites/cse.umn.edu/files/styles/webp_scaled/public/260311_19I3922.jpg.webp?itok=b1IkhSFI" alt="Dongyeop Kang" onerror="this.style.display='none'">
+    <img class="member-avatar" src="https://drive.google.com/thumbnail?id=1gKU153Ee7CRHgFD5RBCp133onwdp3nz5&sz=w400" alt="Dongyeop Kang" onerror="this.src='https://cse.umn.edu/sites/cse.umn.edu/files/styles/webp_scaled/public/260311_19I3922.jpg.webp?itok=b1IkhSFI'">
     <p class="member-name">Dongyeop Kang</p>
-    <p class="member-affil">University of Minnesota – CS &amp; Engineering</p>
-    <p class="member-bio">Builds human-centric NLP systems through cognitively-aligned models and interactive AI. Research bridges language and cognition to support reading, writing, and reasoning at scale.</p>
+    <p class="member-affil">University of Minnesota</p>
+    <p class="member-bio">Natural Language Processing, combining language and cognition. Builds human-centric NLP systems through cognitively-aligned models and interactive AI.</p>
     <div class="member-papers">
       <h4>Selected works</h4>
       <ul>
-        <li>Mary, the Cheeseburger-Eating Vegetarian: Do LLMs Recognize Incoherence? – EACL 2026</li>
+        <li>Mary, the Cheeseburger-Eating Vegetarian: Do LLMs Recognize Incoherence in Narratives? – EACL 2026</li>
         <li>Strong Memory, Weak Control: Executive Functioning in LLMs – EACL 2026</li>
         <li>How LLMs Comprehend Temporal Meaning in Narratives – ACL 2025</li>
+        <li>Tracing How Annotators Think: Augmenting Preference Judgments with Reading Processes – LREC 2026</li>
+        <li>A Comparative Study on Textual Saliency of Styles from Eye Tracking, Annotations, and Language Models – CoNLL 2023</li>
       </ul>
     </div>
     <a class="member-link" href="https://dykang.github.io/" target="_blank">Homepage →</a>
   </div>
 
   <div class="member-card">
-    <img class="member-avatar" src="https://www.cc.gatech.edu/sites/default/files/styles/profile_150x180_/public/images/profiles/2025-06/sashank_varma.jpg?itok=FDCfRanQ" alt="Sashank Varma" onerror="this.style.display='none'">
+    <img class="member-avatar" src="https://drive.google.com/thumbnail?id=1gmqKw1qCfzYoLNcgBTQuNT3-jTefDAKq&sz=w400" alt="Sashank Varma" onerror="this.src='https://www.cc.gatech.edu/sites/default/files/styles/profile_150x180_/public/images/profiles/2025-06/sashank_varma.jpg?itok=FDCfRanQ'">
     <p class="member-name">Sashank Varma</p>
     <p class="member-affil">Georgia Tech – School of Interactive Computing</p>
-    <p class="member-bio">Cognitive scientist investigating the alignment between how humans and Large Language Models understand language and perform cognitive tasks. Uses computational modeling and behavioral experiments.</p>
+    <p class="member-bio">Investigates the alignment between how humans and Large Language Models understand language and, more generally, perform cognitive tasks.</p>
     <div class="member-papers">
       <h4>Selected works</h4>
       <ul>
-        <li>Modeling story-based analogy understanding using LLMs – CogSci 2025</li>
+        <li>Modeling understanding of story-based analogies using LLMs – CogSci 2025</li>
+        <li>When visuals aren't the problem: Evaluating vision-language models on misleading data visualizations – 2026</li>
         <li>Incremental comprehension of garden-path sentences by LLMs – CogSci 2024</li>
         <li>Development of cognitive intelligence in pre-trained language models – EMNLP 2024</li>
+        <li>Recruitment of magnitude representations to understand graded words – Cognitive Psychology, 2024</li>
       </ul>
     </div>
     <a class="member-link" href="https://www.cc.gatech.edu/people/sashank-varma" target="_blank">Homepage →</a>
   </div>
 
   <div class="member-card">
-    <img class="member-avatar" src="https://www.ndsu.edu/sites/default/files/styles/content_profile_full_medium/public/2025-08/Milburn-Evelyn.jpg.webp?itok=-11xUzKE&cb=49e45658" alt="Evelyn Milburn" onerror="this.style.display='none'">
+    <img class="member-avatar" src="https://drive.google.com/thumbnail?id=1jRnaqwADmkeZ2VaO4KT8Dyy-ljgKBfCZ&sz=w400" alt="Evelyn Milburn" onerror="this.src='https://www.ndsu.edu/sites/default/files/styles/content_profile_full_medium/public/2025-08/Milburn-Evelyn.jpg.webp?itok=-11xUzKE&cb=49e45658'">
     <p class="member-name">Evelyn Milburn</p>
-    <p class="member-affil">North Dakota State University – Psychology</p>
-    <p class="member-bio">Investigates how we use knowledge beyond words to flexibly comprehend real-life language, including figurative language, language learning, and cognitive aging. Runs the Experimental Cognition and Language Lab at NDSU.</p>
+    <p class="member-affil">North Dakota State University</p>
+    <p class="member-bio">Investigates how we use knowledge above and beyond words to quickly and flexibly comprehend complicated real-life language use, including figurative language, language learning, and cognitive aging.</p>
     <div class="member-papers">
       <h4>Selected works</h4>
       <ul>
-        <li>Native speakers kick buckets but learners kick doors – Memory &amp; Cognition, 2026</li>
-        <li>Online processing of anomalous learner syntax – Applied Psycholinguistics, 2023</li>
-        <li>Idioms show effects of meaning relatedness and dominance – Psychonomic Bulletin, 2019</li>
+        <li>Native speakers kick buckets but learners kick doors: A comparison of native and non-native idiom comprehension – Memory &amp; Cognition, 2026</li>
+        <li>In the native speaker's eye: Online processing of anomalous learner syntax – Applied Psycholinguistics, 2023</li>
+        <li>Idioms show effects of meaning relatedness and dominance similar to ambiguous words – Psychonomic Bulletin &amp; Review, 2019</li>
+        <li>Comprehending the impossible: What role do selectional restriction violations play? – Language, Cognition and Neuroscience, 2015</li>
       </ul>
     </div>
     <a class="member-link" href="https://www.ndsu.edu/people/evelyn-milburn" target="_blank">Homepage →</a>
+  </div>
+
+  <div class="member-card">
+    <img class="member-avatar" src="https://drive.google.com/thumbnail?id=12MhUw5f7meYThCEynqEteFM-PqCSfr59&sz=w400" alt="Püren Öncel" onerror="this.style.display='none'">
+    <p class="member-name">Püren Öncel</p>
+    <p class="member-affil">University of Valencia</p>
+    <p class="member-bio">Püren's research examines how individuals differ in their phenomenological experiences, particularly during reading. Her current work focuses on understanding how variations in language relate to fluctuations in visual imagery and inner-speech, leveraging methodological techniques from cognitive psychology, linguistics, and NLP.</p>
+    <div class="member-papers">
+      <h4>Selected works</h4>
+      <ul>
+        <li>Mary, the cheeseburger-eating vegetarian: Do LLMs recognize incoherence in narratives? – EACL 2026</li>
+        <li>Investigating the impact of linguistic features of text on readers' phenomenological experiences – Technology, Mind, and Behavior, 2025</li>
+        <li>Exploring the affordances of text and picture stories – Discourse Processes, 2024</li>
+        <li>Seeing through the character's eyes: Examining phenomenological experiences of perspective-taking during reading – Discourse Processes, 2022</li>
+      </ul>
+    </div>
+    <a class="member-link" href="https://scholar.google.com/citations?hl=en&user=00MgfxoAAAAJ&view_op=list_works" target="_blank">Google Scholar →</a>
+  </div>
+
+  <div class="member-card">
+    <img class="member-avatar" src="https://drive.google.com/thumbnail?id=1dU4NAvsAyhzdehJ33zQTZfVVAZeldsLa&sz=w400" alt="Amanda Jensen" onerror="this.style.display='none'">
+    <p class="member-name">Amanda Jensen</p>
+    <p class="member-affil">University of Minnesota</p>
+    <p class="member-bio">Adolescent reading comprehension and text readability.</p>
   </div>
 
 </div>
