@@ -7,7 +7,7 @@ baseurl: ""
 # ========== NAVBAR ==========
 navbar-links:
   About: "aboutme"
-  Sessions: ""
+  Sessions: "/#sessions"
   Members: "members"
   YouTube: "https://www.youtube.com/@textgroup/videos"
   Contact: "/#contact"
