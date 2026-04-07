@@ -10,6 +10,7 @@ navbar-links:
   Sessions: ""
   Members: "members"
   YouTube: "https://www.youtube.com/@textgroup/videos"
+  Contact: "/#contact"
 
 navbar-col: "#f8f6f1"
 navbar-text-col: "#2d5a3d"
@@ -50,6 +51,7 @@ h3-size: 1.2rem
 # ========== BLOG FEED ==========
 paginate: 10
 paginate_path: "/page:num/"
+permalink: /:year-:month-:day-:title/
 
 # ========== PLUGINS ==========
 plugins:

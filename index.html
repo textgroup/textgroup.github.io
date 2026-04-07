@@ -312,6 +312,16 @@ full-width: true
   line-height: 1.4;
   font-family: var(--sans);
 }
+.tg-session-title a {
+  color: inherit !important;
+  text-decoration: none !important;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.tg-session-title a:hover {
+  color: var(--accent) !important;
+  border-bottom-color: var(--accent);
+}
 .tg-session-presenter {
   font-size: 0.825rem;
   color: var(--ink-mid);
@@ -977,13 +987,21 @@ full-width: true
     <div class="tg-contact-detail">
       <h3>Organizers</h3>
       <div class="tg-drow">
-        <span class="tg-dlabel">Varun Athilat</span>
+        <span class="tg-dlabel">Varun Athilat<br><em style="font-style:italic;font-size:0.75rem;color:#777;">Student lead</em></span>
         <span class="tg-dval"><a href="mailto:athil003@umn.edu">athil003@umn.edu</a></span>
       </div>
+      <div class="tg-drow">
+        <span class="tg-dlabel">Andreas Schramm<br><em style="font-style:italic;font-size:0.75rem;color:#777;">Faculty lead</em></span>
+        <span class="tg-dval"><a href="mailto:aschramm@hamline.edu">aschramm@hamline.edu</a></span>
+      </div>
+
+      <h3 style="margin-top:1.75rem;">Homepage inquiries</h3>
       <div class="tg-drow">
         <span class="tg-dlabel">Dongyeop Kang</span>
         <span class="tg-dval"><a href="mailto:dongyeop@umn.edu">dongyeop@umn.edu</a></span>
       </div>
+
+      <h3 style="margin-top:1.75rem;">Details</h3>
       <div class="tg-drow">
         <span class="tg-dlabel">Schedule</span>
         <span class="tg-dval">Biweekly, alternating Thursdays</span>

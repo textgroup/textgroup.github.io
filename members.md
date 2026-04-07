@@ -89,7 +89,72 @@ subtitle: Researchers in TextGroup
   text-decoration: none;
 }
 .member-link:hover { text-decoration: underline; }
+.member-section-title {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.4rem;
+  color: #1a1814;
+  margin: 2.5rem 0 0.25rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid #ddd9d0;
+}
+.member-section-sub {
+  font-size: 0.75rem;
+  color: #8a8784;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0 0 1rem;
+  font-family: 'Courier New', Courier, monospace;
+}
+.member-role {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #2d5a3d;
+  background: #e8f0eb;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  margin-bottom: 0.5rem;
+}
 </style>
+
+<h2 class="member-section-title">Core Leadership</h2>
+<p class="member-section-sub">Organizers &amp; faculty leads</p>
+
+<div class="member-grid">
+
+  <div class="member-card">
+    <img class="member-avatar" src="https://cla.umn.edu/sites/cla.umn.edu/files/styles/profile_photo/public/pictures/2026-04/Elfenbein%20Andrew%202013%20square.jpg" alt="Andrew Elfenbein" onerror="this.style.display='none'">
+    <span class="member-role">Core Leadership</span>
+    <p class="member-name">Andrew Elfenbein</p>
+    <p class="member-affil">University of Minnesota – English Department</p>
+    <p class="member-bio">Professor of English whose research spans 18th–19th century British literature, authorship history, and empirical cognitive approaches to reading. Brings a humanities lens to how readers process and remember text.</p>
+    <a class="member-link" href="mailto:elfen001@umn.edu">elfen001@umn.edu</a>
+  </div>
+
+  <div class="member-card">
+    <img class="member-avatar" src="" alt="Andreas Schramm" onerror="this.style.display='none'">
+    <span class="member-role">Faculty Lead</span>
+    <p class="member-name">Andreas Schramm</p>
+    <p class="member-affil">Hamline University – School of Education (TESOL &amp; Linguistics)</p>
+    <p class="member-bio">Professor of linguistics in the Second Languages Teaching and Learning program. Research centers on functional linguistics, second-language learning, and — most recently — how large language models comprehend narrative structure.</p>
+    <a class="member-link" href="mailto:aschramm@hamline.edu">aschramm@hamline.edu</a>
+  </div>
+
+  <div class="member-card">
+    <img class="member-avatar" src="https://edpsych.umn.edu/sites/edpsych/files/styles/x_small_square/public/2025-07/unnamed%20%284%29.jpg?h=cd2a7045&itok=uwWHSt0W" alt="Varun Athilat" onerror="this.style.display='none'">
+    <span class="member-role">Student Lead</span>
+    <p class="member-name">Varun Athilat</p>
+    <p class="member-affil">University of Minnesota – Educational Psychology</p>
+    <p class="member-bio">Studies the interplay between text and emotion — how language shapes how we feel, and how feelings shape how we read. Research spans multiple-document comprehension, persuasion, and typographical cues as proxies for prosody.</p>
+    <a class="member-link" href="mailto:athil003@umn.edu">athil003@umn.edu</a>
+  </div>
+
+</div>
+
+<h2 class="member-section-title">Members</h2>
+<p class="member-section-sub">Researchers in TextGroup</p>
 
 <div class="member-grid">
 
@@ -107,13 +172,6 @@ subtitle: Researchers in TextGroup
       </ul>
     </div>
     <a class="member-link" href="https://dykang.github.io/" target="_blank">Homepage →</a>
-  </div>
-
-  <div class="member-card">
-    <img class="member-avatar" src="https://edpsych.umn.edu/sites/edpsych/files/styles/x_small_square/public/2025-07/unnamed%20%284%29.jpg?h=cd2a7045&itok=uwWHSt0W" alt="Varun Athilat" onerror="this.style.display='none'">
-    <p class="member-name">Varun Athilat</p>
-    <p class="member-affil">University of Minnesota – Educational Psychology</p>
-    <p class="member-bio">Studies the interplay between text and emotion — how language shapes how we feel, and how feelings shape how we read. Research spans multiple-document comprehension, persuasion, and typographical cues as proxies for prosody.</p>
   </div>
 
   <div class="member-card">
