@@ -134,7 +134,7 @@ subtitle: Researchers in TextGroup
   </div>
 
   <div class="member-card">
-    <img class="member-avatar" src="https://drive.google.com/thumbnail?id=1CHfdQE11UsN-tJ2MkDDidyWcpwg49ztj&sz=w400" alt="Andreas Schramm" onerror="this.style.display='none'">
+    <img class="member-avatar" src="/assets/img/members/andreas-schramm.jpg" alt="Andreas Schramm" onerror="this.style.display='none'">
     <span class="member-role">Faculty Lead</span>
     <p class="member-name">Andreas Schramm</p>
     <p class="member-affil">Hamline University – Professor Emeritus</p>
@@ -154,7 +154,7 @@ subtitle: Researchers in TextGroup
   </div>
 
   <div class="member-card">
-    <img class="member-avatar" src="https://drive.google.com/thumbnail?id=17GJeoHorRlS_57TyOdD6O0Wt8G047qyq&sz=w400" alt="Varun Athilat" onerror="this.style.display='none'">
+    <img class="member-avatar" src="/assets/img/members/varun-athilat.jpg" alt="Varun Athilat" onerror="this.style.display='none'">
     <span class="member-role">Student Lead</span>
     <p class="member-name">Varun Athilat</p>
     <p class="member-affil">University of Minnesota – Twin Cities</p>
@@ -170,7 +170,7 @@ subtitle: Researchers in TextGroup
 <div class="member-grid">
 
   <div class="member-card">
-    <img class="member-avatar" src="https://drive.google.com/thumbnail?id=1gKU153Ee7CRHgFD5RBCp133onwdp3nz5&sz=w400" alt="Dongyeop Kang" onerror="this.src='https://cse.umn.edu/sites/cse.umn.edu/files/styles/webp_scaled/public/260311_19I3922.jpg.webp?itok=b1IkhSFI'">
+    <img class="member-avatar" src="/assets/img/members/dongyeop-kang.jpg" alt="Dongyeop Kang" onerror="this.style.display='none'">
     <p class="member-name">Dongyeop Kang</p>
     <p class="member-affil">University of Minnesota</p>
     <p class="member-bio">Natural Language Processing, combining language and cognition. Builds human-centric NLP systems through cognitively-aligned models and interactive AI.</p>
@@ -188,7 +188,7 @@ subtitle: Researchers in TextGroup
   </div>
 
   <div class="member-card">
-    <img class="member-avatar" src="https://drive.google.com/thumbnail?id=1gmqKw1qCfzYoLNcgBTQuNT3-jTefDAKq&sz=w400" alt="Sashank Varma" onerror="this.src='https://www.cc.gatech.edu/sites/default/files/styles/profile_150x180_/public/images/profiles/2025-06/sashank_varma.jpg?itok=FDCfRanQ'">
+    <img class="member-avatar" src="/assets/img/members/sashank-varma.jpg" alt="Sashank Varma" onerror="this.style.display='none'">
     <p class="member-name">Sashank Varma</p>
     <p class="member-affil">Georgia Tech – School of Interactive Computing</p>
     <p class="member-bio">Investigates the alignment between how humans and Large Language Models understand language and, more generally, perform cognitive tasks.</p>
@@ -206,7 +206,7 @@ subtitle: Researchers in TextGroup
   </div>
 
   <div class="member-card">
-    <img class="member-avatar" src="https://drive.google.com/thumbnail?id=1jRnaqwADmkeZ2VaO4KT8Dyy-ljgKBfCZ&sz=w400" alt="Evelyn Milburn" onerror="this.src='https://www.ndsu.edu/sites/default/files/styles/content_profile_full_medium/public/2025-08/Milburn-Evelyn.jpg.webp?itok=-11xUzKE&cb=49e45658'">
+    <img class="member-avatar" src="/assets/img/members/evelyn-milburn.jpg" alt="Evelyn Milburn" onerror="this.style.display='none'">
     <p class="member-name">Evelyn Milburn</p>
     <p class="member-affil">North Dakota State University</p>
     <p class="member-bio">Investigates how we use knowledge above and beyond words to quickly and flexibly comprehend complicated real-life language use, including figurative language, language learning, and cognitive aging.</p>
@@ -223,7 +223,7 @@ subtitle: Researchers in TextGroup
   </div>
 
   <div class="member-card">
-    <img class="member-avatar" src="https://drive.google.com/thumbnail?id=12MhUw5f7meYThCEynqEteFM-PqCSfr59&sz=w400" alt="Püren Öncel" onerror="this.style.display='none'">
+    <img class="member-avatar" src="/assets/img/members/puren-oncel.jpg" alt="Püren Öncel" onerror="this.style.display='none'">
     <p class="member-name">Püren Öncel</p>
     <p class="member-affil">University of Valencia</p>
     <p class="member-bio">Püren's research examines how individuals differ in their phenomenological experiences, particularly during reading. Her current work focuses on understanding how variations in language relate to fluctuations in visual imagery and inner-speech, leveraging methodological techniques from cognitive psychology, linguistics, and NLP.</p>
@@ -240,10 +240,36 @@ subtitle: Researchers in TextGroup
   </div>
 
   <div class="member-card">
-    <img class="member-avatar" src="https://drive.google.com/thumbnail?id=1dU4NAvsAyhzdehJ33zQTZfVVAZeldsLa&sz=w400" alt="Amanda Jensen" onerror="this.style.display='none'">
+    <img class="member-avatar" src="/assets/img/members/amanda-jensen.jpg" alt="Amanda Jensen" onerror="this.style.display='none'">
     <p class="member-name">Amanda Jensen</p>
     <p class="member-affil">University of Minnesota</p>
     <p class="member-bio">Adolescent reading comprehension and text readability.</p>
+  </div>
+
+  <div class="member-card">
+    <img class="member-avatar" src="/assets/img/members/yoojeong-son.jpg" alt="YooJeong Son" onerror="this.style.display='none'">
+    <p class="member-name">YooJeong Son</p>
+    <p class="member-affil">University of Minnesota</p>
+    <p class="member-bio">My research interests are literacy and instruction, including print and online reading comprehension, as well as learners' interactions with AI during reading and writing. My research focuses on the development of effective instructional approaches for students from linguistically, culturally, and economically diverse backgrounds.</p>
+    <a class="member-link" href="https://scholar.google.com/citations?user=Ku7Bpr8AAAAJ&hl=ko&oi=ao" target="_blank">Google Scholar →</a>
+  </div>
+
+  <div class="member-card">
+    <img class="member-avatar" src="/assets/img/members/michael-mensink.jpg" alt="Michael C. Mensink" onerror="this.style.display='none'">
+    <p class="member-name">Michael C. Mensink</p>
+    <p class="member-affil">University of Wisconsin-Stout</p>
+    <p class="member-bio">Reader misconceptions and inaccurate scientific information, effects of seductive details on cognitive and emotional processes, metacognition and knowledge calibration.</p>
+    <div class="member-papers">
+      <h4>Selected works</h4>
+      <ul>
+        <li>Confidence and knowledge calibrations after reading an introductory text on a complex topic – Discourse Processes, 2025</li>
+        <li>Emotional responses to seductive scientific texts during online and offline reading tasks – Discourse Processes, 2022</li>
+        <li>Implicit textually enhanced processing of aspectual meanings in English learners – Discourse Processes, 2022</li>
+        <li>Do different kinds of introductions influence comprehension and memory for scientific explanations? – Discourse Processes, 2021</li>
+        <li>Prereading questions and online text processing – Discourse Processes, 2012</li>
+      </ul>
+    </div>
+    <a class="member-link" href="https://sites.google.com/site/michaelmensink/" target="_blank">Homepage →</a>
   </div>
 
 </div>
