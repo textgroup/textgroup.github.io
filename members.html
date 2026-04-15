@@ -1,0 +1,378 @@
+---
+layout: page
+title: Members
+subtitle: Researchers in TextGroup
+---
+
+<style>
+:root {
+  --paper: #f8f6f1;
+  --ink: #1a1814;
+  --ink-mid: #4a4845;
+  --ink-muted: #8a8784;
+  --accent: #2d5a3d;
+  --accent-light: #e8f0eb;
+  --rule: #ddd9d0;
+  --serif: Georgia, 'Times New Roman', serif;
+  --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --mono: 'Courier New', Courier, monospace;
+}
+*, *::before, *::after { box-sizing: border-box; }
+body { font-family: var(--sans); background: var(--paper); color: var(--ink); margin: 0; }
+
+/* ── Nav ── */
+.m-nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(248,246,241,0.95);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--rule);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 5%; height: 48px;
+}
+.m-nav-brand {
+  font-family: var(--serif); font-size: 1.1rem; font-weight: 700;
+  color: var(--ink); text-decoration: none;
+}
+.m-nav-brand:hover { color: var(--accent); }
+.m-nav-links { display: flex; gap: 0.15rem; list-style: none; margin: 0; padding: 0; }
+.m-nav-links a {
+  font-size: 0.78rem; font-weight: 500; color: var(--ink-mid);
+  text-decoration: none; padding: 0.35rem 0.65rem; border-radius: 3px;
+  transition: color 0.15s, background 0.15s;
+}
+.m-nav-links a:hover, .m-nav-links a.active { color: var(--accent); background: var(--accent-light); }
+
+/* ── Page ── */
+.m-page { max-width: 1100px; margin: 0 auto; padding: 2.5rem 5% 4rem; }
+.m-page-title {
+  font-family: var(--serif); font-size: 2rem; font-weight: 700;
+  color: var(--ink); margin: 0 0 0.25rem;
+}
+.m-page-sub {
+  font-family: var(--sans); font-size: 0.9rem; color: var(--ink-muted);
+  margin: 0 0 2.5rem;
+}
+
+/* ── Section labels ── */
+.m-section-label {
+  font-family: var(--mono); font-size: 0.7rem; color: var(--ink-muted);
+  text-transform: uppercase; letter-spacing: 0.12em;
+  margin: 2.5rem 0 1.25rem; padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+.m-section-label:first-of-type { margin-top: 0; }
+
+/* ── Member cards ── */
+.m-grid {
+  display: flex; flex-direction: column; gap: 1.25rem;
+}
+.m-card {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 1.5rem;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 1.5rem;
+  background: #fff;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.m-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 2px 12px rgba(45,90,61,0.06);
+}
+.m-card-photo {
+  display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+}
+.m-avatar {
+  width: 100px; height: 100px; border-radius: 50%;
+  object-fit: cover; object-position: center top;
+  border: 3px solid var(--accent-light); background: var(--accent-light);
+}
+.m-role {
+  display: inline-block; font-size: 0.6rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--accent); background: var(--accent-light);
+  padding: 0.15rem 0.45rem; border-radius: 3px; text-align: center;
+}
+.m-card-body { min-width: 0; }
+.m-name {
+  font-family: var(--serif); font-size: 1.15rem; font-weight: 700;
+  color: var(--ink); margin: 0 0 0.15rem;
+}
+.m-affil {
+  font-size: 0.8rem; color: var(--ink-muted); margin: 0 0 0.6rem;
+}
+.m-bio {
+  font-size: 0.85rem; color: var(--ink-mid); line-height: 1.65;
+  margin: 0 0 0.75rem;
+}
+.m-papers-title {
+  font-size: 0.65rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.1em; color: var(--ink-muted); margin: 0 0 0.35rem;
+}
+.m-papers-list {
+  list-style: none; padding: 0; margin: 0 0 0.75rem;
+}
+.m-papers-list li {
+  font-size: 0.78rem; color: var(--ink-mid); line-height: 1.45;
+  padding: 0.25rem 0 0.25rem 0.75rem;
+  border-left: 2px solid var(--rule);
+  margin-bottom: 0.2rem;
+}
+.m-links { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+.m-link {
+  font-size: 0.78rem; font-weight: 600; color: var(--accent);
+  text-decoration: none; transition: color 0.15s;
+}
+.m-link:hover { text-decoration: underline; }
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .m-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .m-card-photo { align-items: center; }
+  .m-papers-list li { text-align: left; }
+  .m-links { justify-content: center; }
+  .m-nav-links a { font-size: 0.7rem; padding: 0.3rem 0.4rem; }
+}
+</style>
+
+<!-- ══════════════ NAV ══════════════ -->
+<nav class="m-nav">
+  <a class="m-nav-brand" href="/">TextGroup</a>
+  <div class="m-nav-links">
+    <a href="/">Home</a>
+    <a href="/#labs">Labs</a>
+    <a href="/#history">History</a>
+    <a href="/#publications">Publications</a>
+    <a href="/#sessions">Sessions</a>
+    <a href="/#contact">Contact</a>
+    <a href="/members" class="active">Members</a>
+  </div>
+</nav>
+
+<!-- ══════════════ PAGE ══════════════ -->
+<div class="m-page">
+  <h1 class="m-page-title">Members</h1>
+  <p class="m-page-sub">Researchers across disciplines who make up TextGroup</p>
+
+  <p class="m-section-label">Core Leadership</p>
+  <div class="m-grid">
+
+    <!-- Andrew Elfenbein -->
+    <div class="m-card">
+      <div class="m-card-photo">
+        <img class="m-avatar" src="/assets/img/members/andrew-elfenbein.jpg" alt="Andrew Elfenbein" onerror="this.style.display='none'">
+        <span class="m-role">Faculty Lead</span>
+      </div>
+      <div class="m-card-body">
+        <p class="m-name">Andrew Elfenbein</p>
+        <p class="m-affil">UMN Dept. of English</p>
+        <p class="m-bio">I work on bridging the worlds of empirical psychology and the humanities, especially in relation to reading and learning.</p>
+        <p class="m-papers-title">Selected works</p>
+        <ul class="m-papers-list">
+          <li><em>The Gist of Reading</em> &mdash; Stanford UP, 2018</li>
+          <li>&ldquo;Mental Representation&rdquo; in <em>Further Reading</em> &mdash; Oxford UP, 2020</li>
+          <li>Rhyme as resonance in poetry comprehension: An expert-novice study &mdash; Memory &amp; Cognition, 2021</li>
+          <li>How feelings matter for reading &mdash; in <em>TXT: The Art of Reading</em>, 2019</li>
+          <li>Text structure and the online processing of expository prose &mdash; Reader, 2016</li>
+          <li>Sweet silent thought: Alliteration and resonance in poetry comprehension &mdash; Psychological Science, 2008</li>
+        </ul>
+        <div class="m-links">
+          <a class="m-link" href="mailto:elfen001@umn.edu">elfen001@umn.edu</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Andreas Schramm -->
+    <div class="m-card">
+      <div class="m-card-photo">
+        <img class="m-avatar" src="/assets/img/members/andreas-schramm.jpg" alt="Andreas Schramm" onerror="this.style.display='none'">
+        <span class="m-role">Faculty Lead</span>
+      </div>
+      <div class="m-card-body">
+        <p class="m-name">Andreas Schramm</p>
+        <p class="m-affil">Hamline University &ndash; Professor Emeritus</p>
+        <p class="m-bio">Researches the cognitive processing and acquisition of time in language &mdash; the system of linguistic expressions for meanings articulating the probability of events.</p>
+        <p class="m-papers-title">Selected works</p>
+        <ul class="m-papers-list">
+          <li>How LLMs comprehend temporal meaning in narratives &mdash; ACL 2025</li>
+          <li>Implicit textually enhanced processing of aspectual meanings in English learners &mdash; Discourse Processes, 2022</li>
+          <li>It is time to tackle aspect! &mdash; MinneTESOL Journal, 2017</li>
+          <li>Processing of aspectual meanings by non-native and native English speakers &mdash; Benjamins, 2016</li>
+        </ul>
+        <div class="m-links">
+          <a class="m-link" href="https://sites.google.com/hamline.edu/andreas-schramm-professor-emer/home" target="_blank">Homepage &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Varun Athilat -->
+    <div class="m-card">
+      <div class="m-card-photo">
+        <img class="m-avatar" src="/assets/img/members/varun-athilat.jpg" alt="Varun Athilat" onerror="this.style.display='none'">
+        <span class="m-role">Student Lead</span>
+      </div>
+      <div class="m-card-body">
+        <p class="m-name">Varun Athilat</p>
+        <p class="m-affil">University of Minnesota &ndash; Twin Cities</p>
+        <p class="m-bio">Although people perceive text as being inherently less emotional than speech, text language still affects our emotions &mdash; and, funnily enough, how we feel can also influence the way we read. This interplay between text and emotions is what I love studying.</p>
+        <div class="m-links">
+          <a class="m-link" href="https://varunathilat.github.io/contact.html" target="_blank">Homepage &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <p class="m-section-label">Members</p>
+  <div class="m-grid">
+
+    <!-- Dongyeop Kang -->
+    <div class="m-card">
+      <div class="m-card-photo">
+        <img class="m-avatar" src="/assets/img/members/dongyeop-kang.jpg" alt="Dongyeop Kang" onerror="this.style.display='none'">
+      </div>
+      <div class="m-card-body">
+        <p class="m-name">Dongyeop Kang</p>
+        <p class="m-affil">University of Minnesota</p>
+        <p class="m-bio">Natural Language Processing, combining language and cognition. Builds human-centric NLP systems through cognitively-aligned models and interactive AI.</p>
+        <p class="m-papers-title">Selected works</p>
+        <ul class="m-papers-list">
+          <li>Mary, the Cheeseburger-Eating Vegetarian: Do LLMs Recognize Incoherence in Narratives? &mdash; EACL 2026 (Oral)</li>
+          <li>Strong Memory, Weak Control: Executive Functioning in LLMs &mdash; EACL 2026 (Oral)</li>
+          <li>How LLMs Comprehend Temporal Meaning in Narratives &mdash; ACL 2025</li>
+          <li>Tracing How Annotators Think: Augmenting Preference Judgments with Reading Processes &mdash; LREC 2026</li>
+          <li>A Comparative Study on Textual Saliency of Styles from Eye Tracking, Annotations, and Language Models &mdash; CoNLL 2023</li>
+        </ul>
+        <div class="m-links">
+          <a class="m-link" href="https://dykang.github.io/" target="_blank">Homepage &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sashank Varma -->
+    <div class="m-card">
+      <div class="m-card-photo">
+        <img class="m-avatar" src="/assets/img/members/sashank-varma.jpg" alt="Sashank Varma" onerror="this.style.display='none'">
+      </div>
+      <div class="m-card-body">
+        <p class="m-name">Sashank Varma</p>
+        <p class="m-affil">Georgia Tech &ndash; School of Interactive Computing</p>
+        <p class="m-bio">Investigates the alignment between how humans and Large Language Models understand language and, more generally, perform cognitive tasks.</p>
+        <p class="m-papers-title">Selected works</p>
+        <ul class="m-papers-list">
+          <li>Modeling understanding of story-based analogies using LLMs &mdash; CogSci 2025</li>
+          <li>When visuals aren&rsquo;t the problem: Evaluating vision-language models on misleading data visualizations &mdash; 2026</li>
+          <li>Incremental comprehension of garden-path sentences by LLMs &mdash; CogSci 2024</li>
+          <li>Development of cognitive intelligence in pre-trained language models &mdash; EMNLP 2024</li>
+          <li>Recruitment of magnitude representations to understand graded words &mdash; Cognitive Psychology, 2024</li>
+        </ul>
+        <div class="m-links">
+          <a class="m-link" href="https://www.cc.gatech.edu/people/sashank-varma" target="_blank">Homepage &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Evelyn Milburn -->
+    <div class="m-card">
+      <div class="m-card-photo">
+        <img class="m-avatar" src="/assets/img/members/evelyn-milburn.jpg" alt="Evelyn Milburn" onerror="this.style.display='none'">
+      </div>
+      <div class="m-card-body">
+        <p class="m-name">Evelyn Milburn</p>
+        <p class="m-affil">North Dakota State University</p>
+        <p class="m-bio">Investigates how we use knowledge above and beyond words to quickly and flexibly comprehend complicated real-life language use, including figurative language, language learning, and cognitive aging.</p>
+        <p class="m-papers-title">Selected works</p>
+        <ul class="m-papers-list">
+          <li>Native speakers kick buckets but learners kick doors: A comparison of native and non-native idiom comprehension &mdash; Memory &amp; Cognition, 2026</li>
+          <li>In the native speaker&rsquo;s eye: Online processing of anomalous learner syntax &mdash; Applied Psycholinguistics, 2023</li>
+          <li>Idioms show effects of meaning relatedness and dominance similar to ambiguous words &mdash; Psychonomic Bulletin &amp; Review, 2019</li>
+          <li>Comprehending the impossible: What role do selectional restriction violations play? &mdash; Language, Cognition and Neuroscience, 2015</li>
+        </ul>
+        <div class="m-links">
+          <a class="m-link" href="https://www.ndsu.edu/people/evelyn-milburn" target="_blank">Homepage &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Püren Öncel -->
+    <div class="m-card">
+      <div class="m-card-photo">
+        <img class="m-avatar" src="/assets/img/members/puren-oncel.jpg" alt="Püren Öncel" onerror="this.style.display='none'">
+      </div>
+      <div class="m-card-body">
+        <p class="m-name">Püren Öncel</p>
+        <p class="m-affil">University of Valencia</p>
+        <p class="m-bio">Examines how individuals differ in their phenomenological experiences, particularly during reading. Her current work focuses on understanding how variations in language relate to fluctuations in visual imagery and inner-speech, leveraging methodological techniques from cognitive psychology, linguistics, and NLP.</p>
+        <p class="m-papers-title">Selected works</p>
+        <ul class="m-papers-list">
+          <li>Mary, the cheeseburger-eating vegetarian: Do LLMs recognize incoherence in narratives? &mdash; EACL 2026</li>
+          <li>Investigating the impact of linguistic features of text on readers&rsquo; phenomenological experiences &mdash; Technology, Mind, and Behavior, 2025</li>
+          <li>Exploring the affordances of text and picture stories &mdash; Discourse Processes, 2024</li>
+          <li>Seeing through the character&rsquo;s eyes: Examining phenomenological experiences of perspective-taking during reading &mdash; Discourse Processes, 2022</li>
+        </ul>
+        <div class="m-links">
+          <a class="m-link" href="https://scholar.google.com/citations?hl=en&amp;user=00MgfxoAAAAJ&amp;view_op=list_works" target="_blank">Google Scholar &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Amanda Jensen -->
+    <div class="m-card">
+      <div class="m-card-photo">
+        <img class="m-avatar" src="/assets/img/members/amanda-jensen.jpg" alt="Amanda Jensen" onerror="this.style.display='none'">
+      </div>
+      <div class="m-card-body">
+        <p class="m-name">Amanda Jensen</p>
+        <p class="m-affil">University of Minnesota</p>
+        <p class="m-bio">Adolescent reading comprehension and text readability.</p>
+      </div>
+    </div>
+
+    <!-- YooJeong Son -->
+    <div class="m-card">
+      <div class="m-card-photo">
+        <img class="m-avatar" src="/assets/img/members/yoojeong-son.jpg" alt="YooJeong Son" onerror="this.style.display='none'">
+      </div>
+      <div class="m-card-body">
+        <p class="m-name">YooJeong Son</p>
+        <p class="m-affil">University of Minnesota</p>
+        <p class="m-bio">Research interests include literacy and instruction, print and online reading comprehension, and learners&rsquo; interactions with AI during reading and writing. Focuses on effective instructional approaches for students from linguistically, culturally, and economically diverse backgrounds.</p>
+        <div class="m-links">
+          <a class="m-link" href="https://scholar.google.com/citations?user=Ku7Bpr8AAAAJ&amp;hl=ko&amp;oi=ao" target="_blank">Google Scholar &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Michael C. Mensink -->
+    <div class="m-card">
+      <div class="m-card-photo">
+        <img class="m-avatar" src="/assets/img/members/michael-mensink.jpg" alt="Michael C. Mensink" onerror="this.style.display='none'">
+      </div>
+      <div class="m-card-body">
+        <p class="m-name">Michael C. Mensink</p>
+        <p class="m-affil">University of Wisconsin-Stout</p>
+        <p class="m-bio">Reader misconceptions and inaccurate scientific information, effects of seductive details on cognitive and emotional processes, metacognition and knowledge calibration.</p>
+        <p class="m-papers-title">Selected works</p>
+        <ul class="m-papers-list">
+          <li>Confidence and knowledge calibrations after reading an introductory text on a complex topic &mdash; Discourse Processes, 2025</li>
+          <li>Emotional responses to seductive scientific texts during online and offline reading tasks &mdash; Discourse Processes, 2022</li>
+          <li>Implicit textually enhanced processing of aspectual meanings in English learners &mdash; Discourse Processes, 2022</li>
+          <li>Do different kinds of introductions influence comprehension and memory for scientific explanations? &mdash; Discourse Processes, 2021</li>
+          <li>Prereading questions and online text processing &mdash; Discourse Processes, 2012</li>
+        </ul>
+        <div class="m-links">
+          <a class="m-link" href="https://sites.google.com/site/michaelmensink/" target="_blank">Homepage &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <p style="margin-top:2rem;font-size:0.8rem;color:var(--ink-muted);">
+    Want to be listed here? Contact <a href="mailto:athil003@umn.edu" style="color:var(--accent);">athil003@umn.edu</a> or the organizers.
+  </p>
+</div>
