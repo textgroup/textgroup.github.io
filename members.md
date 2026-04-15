@@ -21,8 +21,8 @@ subtitle: Researchers in TextGroup
   border-color: #4a7c5f;
 }
 .member-avatar {
-  width: 72px;
-  height: 72px;
+  width: 96px;
+  height: 96px;
   border-radius: 50%;
   object-fit: cover;
   object-position: center top;
@@ -31,8 +31,8 @@ subtitle: Researchers in TextGroup
   background: #e8f0eb;
 }
 .member-avatar-fallback {
-  width: 72px;
-  height: 72px;
+  width: 96px;
+  height: 96px;
   border-radius: 50%;
   background: #e8f0eb;
   display: flex;
@@ -125,11 +125,22 @@ subtitle: Researchers in TextGroup
 <div class="member-grid">
 
   <div class="member-card">
-    <img class="member-avatar" src="https://cla.umn.edu/sites/cla.umn.edu/files/styles/profile_photo/public/pictures/2026-04/Elfenbein%20Andrew%202013%20square.jpg" alt="Andrew Elfenbein" onerror="this.style.display='none'">
+    <img class="member-avatar" src="/assets/img/members/andrew-elfenbein.jpg" alt="Andrew Elfenbein" onerror="this.style.display='none'">
     <span class="member-role">Core Leadership</span>
     <p class="member-name">Andrew Elfenbein</p>
-    <p class="member-affil">University of Minnesota – English Department</p>
-    <p class="member-bio">Professor of English whose research spans 18th–19th century British literature, authorship history, and empirical cognitive approaches to reading. Brings a humanities lens to how readers process and remember text.</p>
+    <p class="member-affil">UMN Dept. of English</p>
+    <p class="member-bio">I work on bridging the worlds of empirical psychology and the humanities, especially in relation to reading and learning.</p>
+    <div class="member-papers">
+      <h4>Selected works</h4>
+      <ul>
+        <li><em>The Gist of Reading</em> – Stanford UP, 2018</li>
+        <li>"Mental Representation" in <em>Further Reading</em> – Oxford UP, 2020</li>
+        <li>Rhyme as resonance in poetry comprehension: An expert-novice study – Memory &amp; Cognition, 2021</li>
+        <li>How feelings matter for reading – in <em>TXT: The Art of Reading</em>, 2019</li>
+        <li>Text structure and the online processing of expository prose – Reader, 2016</li>
+        <li>Sweet silent thought: Alliteration and resonance in poetry comprehension – Psychological Science, 2008</li>
+      </ul>
+    </div>
     <a class="member-link" href="mailto:elfen001@umn.edu">elfen001@umn.edu</a>
   </div>
 
@@ -159,7 +170,7 @@ subtitle: Researchers in TextGroup
     <p class="member-name">Varun Athilat</p>
     <p class="member-affil">University of Minnesota – Twin Cities</p>
     <p class="member-bio">Although people perceive text as being inherently less emotional than speech, text language still affects our emotions — and, funnily enough, how we feel can also influence the way we read. This interplay between text and emotions is what I love studying.</p>
-    <a class="member-link" href="mailto:athil003@umn.edu">athil003@umn.edu</a>
+    <a class="member-link" href="https://varunathilat.github.io/contact.html" target="_blank">Homepage →</a>
   </div>
 
 </div>

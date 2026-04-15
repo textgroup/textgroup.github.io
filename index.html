@@ -9,6 +9,62 @@ full-width: true
 /* ── Reset box model ── */
 *, *::before, *::after { box-sizing: border-box; }
 
+/* ── SECTION NAV ── */
+.tg-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(248,246,241,0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--rule);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5%;
+  height: 44px;
+  gap: 0.15rem;
+}
+.tg-nav a {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--ink-mid) !important;
+  text-decoration: none !important;
+  padding: 0.35rem 0.65rem;
+  border-radius: 3px;
+  transition: color 0.15s, background 0.15s;
+  white-space: nowrap;
+}
+.tg-nav a:hover {
+  color: var(--accent) !important;
+  background: var(--accent-light);
+}
+.tg-nav a.active {
+  color: var(--accent) !important;
+  background: var(--accent-light);
+  font-weight: 600;
+}
+.tg-nav-sep {
+  width: 1px;
+  height: 16px;
+  background: var(--rule);
+  margin: 0 0.25rem;
+}
+@media (max-width: 768px) {
+  .tg-nav {
+    justify-content: flex-start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 0;
+    padding: 0 1rem;
+  }
+  .tg-nav::-webkit-scrollbar { display: none; }
+  .tg-nav a { font-size: 0.75rem; padding: 0.3rem 0.55rem; flex-shrink: 0; }
+  .tg-nav-sep { margin: 0 0.15rem; }
+}
+
 /* ── CSS Variables ── */
 :root {
   --ink: #1a1814;
@@ -231,8 +287,8 @@ full-width: true
   transform: translateY(-2px);
 }
 .tg-avatar {
-  width: 64px;
-  height: 64px;
+  width: 96px;
+  height: 96px;
   border-radius: 50%;
   object-fit: cover;
   object-position: center top;
@@ -484,6 +540,116 @@ full-width: true
 
 .tg-hidden { display: none !important; }
 
+/* ── HISTORY ── */
+.tg-history-timeline {
+  position: relative;
+  padding-left: 2.5rem;
+  margin-top: 1rem;
+}
+.tg-history-timeline::before {
+  content: '';
+  position: absolute;
+  left: 0.5rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--rule);
+}
+.tg-history-entry {
+  position: relative;
+  margin-bottom: 3rem;
+}
+.tg-history-entry:last-child { margin-bottom: 0; }
+.tg-history-dot {
+  position: absolute;
+  left: -2.15rem;
+  top: 0.35rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--paper);
+  z-index: 1;
+}
+.tg-history-year {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--accent);
+  letter-spacing: 0.06em;
+  margin-bottom: 0.4rem;
+}
+.tg-history-title {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  color: var(--ink);
+  margin: 0 0 0.6rem;
+  padding: 0;
+  border: none;
+}
+.tg-history-body {
+  font-size: 0.9rem;
+  color: var(--ink-mid);
+  line-height: 1.75;
+  font-family: var(--sans);
+  max-width: 72ch;
+}
+.tg-history-body p { margin: 0 0 0.8rem; }
+.tg-history-body p:last-child { margin-bottom: 0; }
+.tg-history-img {
+  max-width: 100%;
+  border-radius: 4px;
+  border: 1px solid var(--rule);
+  margin: 1rem 0;
+}
+.tg-history-img.small { max-width: 420px; }
+.tg-history-img.medium { max-width: 600px; }
+.tg-history-schedule {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 1.25rem 1.5rem;
+  margin: 1rem 0;
+  font-size: 0.82rem;
+  color: var(--ink-mid);
+  font-family: var(--sans);
+  line-height: 1.7;
+  max-width: 72ch;
+}
+.tg-history-schedule strong {
+  color: var(--ink);
+}
+.tg-history-toggle {
+  font-size: 0.8rem;
+  color: var(--accent);
+  cursor: pointer;
+  font-weight: 600;
+  font-family: var(--sans);
+  background: none;
+  border: none;
+  padding: 0;
+  margin-top: 0.5rem;
+  display: inline-block;
+}
+.tg-history-toggle:hover { text-decoration: underline; }
+.tg-history-collapsible {
+  display: none;
+  margin-top: 0.8rem;
+}
+.tg-history-collapsible.open { display: block; }
+.tg-history-quote {
+  border-left: 3px solid var(--accent);
+  padding: 0.8rem 1.25rem;
+  margin: 1rem 0;
+  font-style: italic;
+  color: var(--ink-mid);
+  font-size: 0.88rem;
+  line-height: 1.7;
+  font-family: var(--sans);
+  max-width: 72ch;
+  background: var(--paper);
+  border-radius: 0 4px 4px 0;
+}
+
 /* ── RESPONSIVE ── */
 @media (max-width: 768px) {
   .tg-hero { grid-template-columns: 1fr; min-height: auto; }
@@ -493,8 +659,87 @@ full-width: true
   .tg-session-actions { align-items: flex-start; }
   .tg-contact-grid { grid-template-columns: 1fr; gap: 2rem; }
   .tg-section { padding: 3rem 1.5rem; }
+  .tg-pub-card { padding: 1.2rem 1rem; }
+}
+
+/* ── PUBLICATIONS ── */
+.tg-pub-list { display: flex; flex-direction: column; gap: 0.75rem; max-width: 860px; }
+.tg-pub-card {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  padding: 1.2rem 1.4rem;
+  transition: border-color 0.15s;
+}
+.tg-pub-card:hover { border-color: var(--accent); }
+.tg-pub-title {
+  font-family: var(--serif);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0 0 0.35rem 0;
+  line-height: 1.35;
+}
+.tg-pub-authors {
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  color: var(--ink-mid);
+  margin: 0 0 0.3rem 0;
+  line-height: 1.5;
+}
+.tg-pub-authors .tg-member-highlight {
+  color: var(--accent);
+  font-weight: 600;
+}
+.tg-pub-venue {
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+  font-style: italic;
+  margin: 0;
+}
+.tg-pub-venue a {
+  color: var(--accent) !important;
+  text-decoration: none !important;
+  font-style: normal;
+  font-weight: 500;
+  margin-left: 0.5rem;
+}
+.tg-pub-venue a:hover { text-decoration: underline !important; }
+.tg-pub-member-tag {
+  font-family: var(--sans);
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--accent-light);
+  padding: 0.15rem 0.45rem;
+  border-radius: 3px;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}
+.tg-pub-by-label {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 2rem 0 0.75rem 0;
 }
 </style>
+
+<!-- ══════════════ SECTION NAV ══════════════ -->
+<nav class="tg-nav" aria-label="Page sections">
+  <a href="#">Home</a>
+  <a href="#labs">Labs</a>
+  <a href="#history">History</a>
+  <a href="#publications">Publications</a>
+  <a href="#sessions">Sessions</a>
+  <a href="#contact">Contact</a>
+  <span class="tg-nav-sep"></span>
+  <a href="/aboutme">About</a>
+  <a href="/members.html">Members</a>
+  <a href="https://www.youtube.com/@textgroup/videos" target="_blank">YouTube</a>
+</nav>
 
 <!-- ══════════════ HERO ══════════════ -->
 <div class="tg-hero">
@@ -540,7 +785,7 @@ full-width: true
       <p class="tg-member-name">Varun Athilat</p>
       <p class="tg-member-affil">University of Minnesota – Twin Cities</p>
       <p class="tg-member-bio">Although people perceive text as being inherently less emotional than speech, text language still affects our emotions — and how we feel shapes how we read.</p>
-      <a class="tg-member-link" href="mailto:athil003@umn.edu">athil003@umn.edu</a>
+      <a class="tg-member-link" href="https://varunathilat.github.io/contact.html" target="_blank">Homepage →</a>
     </div>
 
     <div class="tg-member-card">
@@ -556,6 +801,13 @@ full-width: true
 
   <p class="tg-members-group-label" style="margin-top:2.5rem;">Members</p>
   <div class="tg-members-grid" id="tg-members-shuffle">
+
+    <div class="tg-member-card">
+      <img class="tg-avatar" src="/assets/img/members/andrew-elfenbein.jpg" alt="Andrew Elfenbein" onerror="this.style.display='none'">
+      <p class="tg-member-name">Andrew Elfenbein</p>
+      <p class="tg-member-affil">UMN Dept. of English</p>
+      <p class="tg-member-bio">Bridging empirical psychology and the humanities, especially in relation to reading and learning.</p>
+    </div>
 
     <div class="tg-member-card">
       <img class="tg-avatar" src="/assets/img/members/dongyeop-kang.jpg" alt="Dongyeop Kang" onerror="this.style.display='none'">
@@ -614,7 +866,7 @@ full-width: true
 
   </div>
   <p style="margin-top:1.5rem;font-size:0.8rem;color:var(--ink-muted);font-family:var(--sans);">
-    <a href="/members" style="color:var(--accent);">View full member profiles →</a>
+    <a href="/members.html" style="color:var(--accent);">View full member profiles →</a>
   </p>
 </div>
 
@@ -655,10 +907,331 @@ full-width: true
   </div>
 </div>
 
+<!-- ══════════════ HISTORY ══════════════ -->
+<div class="tg-section warm" id="history">
+  <div class="tg-section-rule">
+    <span class="tg-section-num">03</span>
+    <h2 class="tg-section-title">History</h2>
+  </div>
+
+  <div class="tg-history-timeline">
+
+    <!-- ── 2013: Replication Crisis ── -->
+    <div class="tg-history-entry">
+      <div class="tg-history-dot"></div>
+      <div class="tg-history-year">SPRING 2013</div>
+      <h3 class="tg-history-title">The Replication Crisis of &rsquo;13</h3>
+      <div class="tg-history-body">
+        <p>In Spring 2013, TextGroup took a holiday from Text and Discourse to see the revolution firsthand. We spent the semester immersed in the Replication Crisis &mdash; not as voyeurs but as journalists intent on discovering if, under all of the bluster and righteousness of the revolutionaries, there was something important there.</p>
+        <button class="tg-history-toggle" onclick="tgToggleHistory(this)">Read more &darr;</button>
+        <div class="tg-history-collapsible">
+          <p>On Christmas Eve 2012, Sashank Varma emailed the group proposing a radical new model: instead of reading papers about text comprehension, they would spend a semester exploring the crisis of confidence in psychological science. The proposed syllabus spanned 15 topics &mdash; from false positives and the decline effect to outright fraud and proposed solutions.</p>
+          <div class="tg-history-quote">
+            &ldquo;I think it would be a lot of fun to read some of these articles next semester. We could meet every week or two over lunch/coffee or over dinner/drinks and chat about the flawed science of our peers. (Those charlatans!)&rdquo;<br>
+            &mdash; Sashank Varma, December 23, 2012
+          </div>
+          <p>It was a grand experiment. The group met weekly in a spare room in Elliott Hall. The question of &ldquo;What constitutes good science?&rdquo; attracted attention well beyond the usual circle. Chad Marsolek brought strong ideas every week. Brooke Lea drew on his experience as a statistics textbook author. Katrina Schleisman, a philosophically inclined PhD student, was an active participant. People from other departments who had never before attended TextGroup came to join the conversation.</p>
+          <p>A highlight was when Mija Van Der Wege invited her colleague Julie Neiworth to attend. Julie did comparative work with monkeys and was part of a network of researchers tasked with replicating Marc Hauser&rsquo;s experiments to see which held up and which were fabricated. For one glorious day, monkeys reigned in TextGroup!</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 2014: SidFest ── -->
+    <div class="tg-history-entry">
+      <div class="tg-history-dot"></div>
+      <div class="tg-history-year">FALL 2014</div>
+      <h3 class="tg-history-title">SidFest</h3>
+      <div class="tg-history-body">
+        <p>In Fall 2014, Sid Horton decamped from Chicago (Northwestern) to spend his sabbatical in Minneapolis. His presence was felt in many ways, and at the end of the semester, TextGroup decided to hold a one-day event to honor his time among them.</p>
+        <button class="tg-history-toggle" onclick="tgToggleHistory(this)">Read more &darr;</button>
+        <div class="tg-history-collapsible">
+          <p>Officially advertised as the &ldquo;1st Annual Minnesota Meeting on Text and Discourse Comprehension,&rdquo; it was really &ldquo;SidFest.&rdquo; Faculty gave 30-minute talks &mdash; long enough to develop an idea in depth. The venue was the large and beautiful Room 325 in the Education Sciences Building; breakfast was pastries and coffee; and lunch was a group walk to Dinkytown for Greek food.</p>
+          <div class="tg-history-schedule">
+            <strong>Program highlights:</strong><br>
+            Brooke Lea &middot; Narrative time shifts and reactivation<br>
+            Panayiota Kendeou &middot; Knowledge revision and source credibility<br>
+            Andreas Schramm &middot; Lexical aspect in native and non-native speakers<br>
+            Joseph Magliano &middot; Noticing differences in adapted narratives<br>
+            Kate Bohn-Gettler &middot; Standards of coherence vs. standards of relevance<br>
+            Andrew Elfenbein &middot; After reading<br>
+            Mija Van Der Wege &middot; Closeness-communication bias and group membership<br>
+            Sid Horton &middot; Metaphor and character intimacy in narrative<br>
+            Randy Fletcher &middot; Levels of representation and metacomprehension
+          </div>
+          <div class="tg-history-quote">
+            &ldquo;Joe Magliano, visiting from Northern Illinois University, could&hellip;not&hellip;believe&hellip;the intellectual excitement and camaraderie of TextGroup! My lasting memory will be of him smiling and shaking his head that such an event could happen.&rdquo;
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 2018: AndyFest ── -->
+    <div class="tg-history-entry">
+      <div class="tg-history-dot"></div>
+      <div class="tg-history-year">SPRING 2018</div>
+      <h3 class="tg-history-title">AndyFest</h3>
+      <div class="tg-history-body">
+        <p>In early 2018, Andrew Elfenbein published <em>The Gist of Reading</em>, a book dedicated to TextGroup. To celebrate, the group secretly organized a one-day event in his honor &mdash; disguised as &ldquo;SidFest 2.0: Electric Boogaloo.&rdquo;</p>
+        <img class="tg-history-img small" src="/assets/img/history/andyfest-book-dedication.jpg" alt="Acknowledgments from The Gist of Reading, dedicating the book to TextGroup members" loading="lazy">
+        <button class="tg-history-toggle" onclick="tgToggleHistory(this)">Read more &darr;</button>
+        <div class="tg-history-collapsible">
+          <p>The ruse worked &mdash; Andy never suspected a thing. He was likely thrown off the scent by the meme-based advertising campaign:</p>
+          <img class="tg-history-img medium" src="/assets/img/history/andyfest-memes.jpg" alt="Meme collage advertising SidFest 2.0 to disguise AndyFest" loading="lazy">
+          <p>Officially the &ldquo;2nd Annual Minnesota Meeting on Text and Discourse Comprehension,&rdquo; the schedule featured talks connecting to Andy&rsquo;s interests &mdash; from rhymes as memory cues in poetry to text comprehension from first principles.</p>
+          <div class="tg-history-schedule">
+            <strong>Program highlights:</strong><br>
+            Brooke Lea, Andrew Elfenbein, David Rapp &amp; Chelsea Voskuilen &middot; Rhymes as memory cues in poetry<br>
+            Andreas Schramm, Verena Haser, Michael Mensink &amp; Jonas Reifenrath &middot; Cognitive processing of time in language<br>
+            Catherine Bohn-Gettler &middot; Process vs. product instructions for science texts<br>
+            Mija Van Der Wege &middot; Marking irony in text-based communications<br>
+            Panayiota Kendeou &middot; The assessment of reading comprehension<br>
+            Sashank Varma &middot; Text comprehension from first principles<br>
+            Andrew Elfenbein &middot; Poetry as speech act
+          </div>
+          <p>During the Welcome, the group revealed to Andy the real reason for the meeting:</p>
+          <img class="tg-history-img medium" src="/assets/img/history/andyfest-reaction.jpg" alt="Andy Elfenbein reacting to the AndyFest surprise reveal" loading="lazy">
+          <p>Paul van den Broek joined via Skype and told the story of founding TextGroup with Randy Fletcher &mdash; and how Andy had found Paul&rsquo;s class and then TextGroup as his own research turned in that direction.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════ PUBLICATIONS ══════════════ -->
+<div class="tg-section warm" id="publications">
+  <div class="tg-section-rule">
+    <span class="tg-section-num">04</span>
+    <h2 class="tg-section-title">Publications</h2>
+  </div>
+  <p style="font-family:var(--sans);font-size:0.85rem;color:var(--ink-mid);max-width:680px;margin-bottom:1.5rem;">
+    Selected papers by TextGroup members that align with our shared interests in language, cognition, and text processing. <span class="tg-member-highlight" style="color:var(--accent);font-weight:600;">Highlighted authors</span> are current TextGroup members.
+  </p>
+
+  <div class="tg-pub-list">
+
+    <p class="tg-pub-by-label">2026</p>
+
+    <div class="tg-pub-card">
+      <p class="tg-pub-title">Mary, the Cheeseburger-Eating Vegetarian: Do LLMs Recognize Incoherence in Narratives?</p>
+      <p class="tg-pub-authors"><span class="tg-member-highlight">Karin de Langis</span>, <span class="tg-member-highlight">Püren Öncel</span>, Ryan Peters, <span class="tg-member-highlight">Andrew Elfenbein</span>, Laura Kristen Allen, <span class="tg-member-highlight">Andreas Schramm</span>, <span class="tg-member-highlight">Dongyeop Kang</span></p>
+      <p class="tg-pub-venue">EACL 2026 (Oral)</p>
+    </div>
+
+    <div class="tg-pub-card">
+      <p class="tg-pub-title">Strong Memory, Weak Control: An Empirical Study of Executive Functioning in LLMs</p>
+      <p class="tg-pub-authors"><span class="tg-member-highlight">Karin de Langis</span>, Jong Inn Park, Bin Hu, Khanh Chi Le, <span class="tg-member-highlight">Andreas Schramm</span>, <span class="tg-member-highlight">Michael C. Mensink</span>, <span class="tg-member-highlight">Andrew Elfenbein</span>, <span class="tg-member-highlight">Dongyeop Kang</span></p>
+      <p class="tg-pub-venue">EACL 2026 (Oral)</p>
+    </div>
+
+    <div class="tg-pub-card">
+      <p class="tg-pub-title">Tracing How Annotators Think: Augmenting Preference Judgments with Reading Processes</p>
+      <p class="tg-pub-authors"><span class="tg-member-highlight">Karin de Langis</span>, William Walker, Khanh Chi Le, <span class="tg-member-highlight">Dongyeop Kang</span></p>
+      <p class="tg-pub-venue">LREC 2026</p>
+    </div>
+
+    <div class="tg-pub-card">
+      <p class="tg-pub-title">Native Speakers Kick Buckets but Learners Kick Doors: A Comparison of Native and Non-Native Idiom Comprehension</p>
+      <p class="tg-pub-authors"><span class="tg-member-highlight">Milburn, E.</span>, Vulchanova, M., Saltzman, D., Magnuson, J., &amp; Vulchanov, V.</p>
+      <p class="tg-pub-venue">Memory &amp; Cognition, 2026</p>
+    </div>
+
+    <div class="tg-pub-card">
+      <p class="tg-pub-title">When Visuals Aren't the Problem: Evaluating Vision-Language Models on Misleading Data Visualizations</p>
+      <p class="tg-pub-authors">Lalai, H. N., Shah, R. S., Pfister, H., <span class="tg-member-highlight">Varma, S.</span>, &amp; Guo, G.</p>
+      <p class="tg-pub-venue">arXiv, 2026 <a href="https://arxiv.org/abs/2603.22368" target="_blank">Link</a></p>
+    </div>
+
+    <p class="tg-pub-by-label">2025</p>
+
+    <div class="tg-pub-card">
+      <p class="tg-pub-title">How LLMs Comprehend Temporal Meaning in Narratives: A Case Study in Cognitive Evaluation of LLMs</p>
+
+      <p class="tg-pub-authors"><span class="tg-member-highlight">Karin de Langis</span>, Jong Inn Park, <span class="tg-member-highlight">Andreas Schramm</span>, Bin Hu, Khanh Chi Le, <span class="tg-member-highlight">Dongyeop Kang</span></p>
+      <p class="tg-pub-venue">ACL 2025</p>
+    </div>
+
+    <div class="tg-pub-card">
+      <p class="tg-pub-title">Modeling Understanding of Story-Based Analogies Using Large Language Models</p>
+      <p class="tg-pub-authors">Kabra, K., Inani, K., Marupudi, V., &amp; <span class="tg-member-highlight">Varma, S.</span></p>
+      <p class="tg-pub-venue">Proceedings of the 47th Annual Conference of the Cognitive Science Society <a href="https://escholarship.org/uc/item/2rn678q8" target="_blank">Link</a></p>
+    </div>
+
+    <div class="tg-pub-card">
+      <p class="tg-pub-title">Investigating the Impact of Linguistic Features of Text on Readers' Phenomenological Experiences</p>
+      <p class="tg-pub-authors"><span class="tg-member-highlight">Öncel, P.</span>, Smith, S. L., Allen, L. K., &amp; Mills, C.</p>
+      <p class="tg-pub-venue">Technology, Mind, and Behavior, 6(1), 84–101 <a href="https://doi.org/10.1037/tmb0000156" target="_blank">DOI</a></p>
+    </div>
+
+    <div class="tg-pub-card">
+      <p class="tg-pub-title">Confidence and Knowledge Calibrations After Reading an Introductory Text on a Complex Topic</p>
+      <p class="tg-pub-authors">Withall, M. M., <span class="tg-member-highlight">Mensink, M. C.</span>, &amp; Rapp, D. N.</p>
+      <p class="tg-pub-venue">Discourse Processes, 62(4), 226–256 <a href="https://doi.org/10.1080/0163853X.2025.2470034" target="_blank">DOI</a></p>
+    </div>
+
+    <p class="tg-pub-by-label">2024</p>
+
+    <div class="tg-pub-card">
+      <p class="tg-pub-title">Incremental Comprehension of Garden-Path Sentences by Large Language Models</p>
+      <p class="tg-pub-authors">Li, A., Cai, T., Feng, X., Narang, S., Peng, A., Shah, R. S., &amp; <span class="tg-member-highlight">Varma, S.</span></p>
+      <p class="tg-pub-venue">Proceedings of the 46th Annual Conference of the Cognitive Science Society <a href="https://escholarship.org/uc/item/692164d8" target="_blank">Link</a></p>
+    </div>
+
+    <div class="tg-pub-card">
+      <p class="tg-pub-title">Development of Cognitive Intelligence in Pre-Trained Language Models</p>
+      <p class="tg-pub-authors">Shah, R. S., Bhardwaj, K., &amp; <span class="tg-member-highlight">Varma, S.</span></p>
+      <p class="tg-pub-venue">EMNLP 2024 <a href="https://doi.org/10.18653/v1/2024.emnlp-main.539" target="_blank">DOI</a></p>
+    </div>
+
+    <div class="tg-pub-card">
+      <p class="tg-pub-title">Recruitment of Magnitude Representations to Understand Graded Words</p>
+      <p class="tg-pub-authors"><span class="tg-member-highlight">Varma, S.</span>, Sanford, E. M., Shaffer, O., Marupudi, V., &amp; Lea, R. B.</p>
+      <p class="tg-pub-venue">Cognitive Psychology, 153 <a href="https://doi.org/10.1016/j.cogpsych.2024.101673" target="_blank">DOI</a></p>
+    </div>
+
+    <div class="tg-pub-card">
+      <p class="tg-pub-title">Exploring the Affordances of Text and Picture Stories</p>
+      <p class="tg-pub-authors"><span class="tg-member-highlight">Öncel, P.</span>, Hu, S., Ness-Maddox, H., Allen, L. K., &amp; Magliano, J.</p>
+      <p class="tg-pub-venue">Discourse Processes, 61(4–5), 203–221 <a href="https://doi.org/10.1080/0163853X.2024.2352814" target="_blank">DOI</a></p>
+    </div>
+
+    <p class="tg-pub-by-label">2023</p>
+
+    <div class="tg-pub-card">
+      <p class="tg-pub-title">A Comparative Study on Textual Saliency of Styles from Eye Tracking, Annotations, and Language Models</p>
+      <p class="tg-pub-authors"><span class="tg-member-highlight">Karin de Langis</span>, <span class="tg-member-highlight">Dongyeop Kang</span></p>
+      <p class="tg-pub-venue">CoNLL 2023</p>
+    </div>
+
+    <div class="tg-pub-card">
+      <p class="tg-pub-title">In the Native Speaker's Eye: Online Processing of Anomalous Learner Syntax</p>
+      <p class="tg-pub-authors">Søby, K. F., <span class="tg-member-highlight">Milburn, E.</span>, Kristensen, L. B., Vulchanova, M., &amp; Vulchanov, V.</p>
+      <p class="tg-pub-venue">Applied Psycholinguistics, 1–28</p>
+    </div>
+
+    <p class="tg-pub-by-label">2022</p>
+
+    <div class="tg-pub-card">
+      <p class="tg-pub-title">Implicit Textually Enhanced Processing of Aspectual Meanings in English Learners with German as a First Language</p>
+      <p class="tg-pub-authors"><span class="tg-member-highlight">Schramm, A.</span>, Haser, V., <span class="tg-member-highlight">Mensink, M. C.</span>, Reifenrath, J., &amp; Kassemi, P.</p>
+      <p class="tg-pub-venue">Discourse Processes, 59(7), 520–552</p>
+    </div>
+
+    <div class="tg-pub-card">
+      <p class="tg-pub-title">Emotional Responses to Seductive Scientific Texts During Online and Offline Reading Tasks</p>
+      <p class="tg-pub-authors"><span class="tg-member-highlight">Mensink, M. C.</span></p>
+      <p class="tg-pub-venue">Discourse Processes, 59(1–2), 76–93 <a href="https://doi.org/10.1080/0163853X.2021.1918492" target="_blank">DOI</a></p>
+    </div>
+
+    <div class="tg-pub-card">
+      <p class="tg-pub-title">Seeing Through the Character's Eyes: Examining Phenomenological Experiences of Perspective-Taking During Reading</p>
+      <p class="tg-pub-authors"><span class="tg-member-highlight">Öncel, P.</span>, Creer, S. D., &amp; Allen, L. K.</p>
+      <p class="tg-pub-venue">Discourse Processes, 59(5–6), 462–480 <a href="https://doi.org/10.1080/0163853X.2022.2088031" target="_blank">DOI</a></p>
+    </div>
+
+    <p class="tg-pub-by-label">2021</p>
+
+    <div class="tg-pub-card">
+      <p class="tg-pub-title">Rhyme as Resonance in Poetry Comprehension: An Expert-Novice Study</p>
+      <p class="tg-pub-authors">Lea, B., <span class="tg-member-highlight">Elfenbein, A.</span>, &amp; Rapp, D.</p>
+      <p class="tg-pub-venue">Memory &amp; Cognition, 49(7), 1285–1299</p>
+    </div>
+
+    <div class="tg-pub-card">
+      <p class="tg-pub-title">Do Different Kinds of Introductions Influence Comprehension and Memory for Scientific Explanations?</p>
+      <p class="tg-pub-authors"><span class="tg-member-highlight">Mensink, M. C.</span>, Kendeou, P., &amp; Rapp, D. N.</p>
+      <p class="tg-pub-venue">Discourse Processes, 58(5–6), 491–512</p>
+    </div>
+
+    <p class="tg-pub-by-label">2020</p>
+
+    <div class="tg-pub-card">
+      <p class="tg-pub-title">Mental Representation</p>
+      <p class="tg-pub-authors"><span class="tg-member-highlight">Elfenbein, A.</span></p>
+      <p class="tg-pub-venue">In <em>Further Reading</em>, ed. Leah Price &amp; Matthew Rubery, Oxford UP, pp. 246–256</p>
+    </div>
+
+    <p class="tg-pub-by-label">2019</p>
+
+    <div class="tg-pub-card">
+      <p class="tg-pub-title">How Feelings Matter for Reading</p>
+      <p class="tg-pub-authors"><span class="tg-member-highlight">Elfenbein, A.</span>, &amp; Bohn-Gettler, C. M.</p>
+      <p class="tg-pub-venue">In <em>TXT: The Art of Reading</em>, Leiden: Academic Press, pp. 97–117</p>
+    </div>
+
+    <div class="tg-pub-card">
+      <p class="tg-pub-title">Idioms Show Effects of Meaning Relatedness and Dominance Similar to Those Seen for Ambiguous Words</p>
+      <p class="tg-pub-authors"><span class="tg-member-highlight">Milburn, E.</span>, &amp; Warren, T.</p>
+      <p class="tg-pub-venue">Psychonomic Bulletin &amp; Review, 26(2), 591–598</p>
+    </div>
+
+    <p class="tg-pub-by-label">2018</p>
+
+    <div class="tg-pub-card">
+      <p class="tg-pub-title">The Gist of Reading</p>
+      <p class="tg-pub-authors"><span class="tg-member-highlight">Elfenbein, A.</span></p>
+      <p class="tg-pub-venue">Stanford University Press (Book)</p>
+    </div>
+
+    <p class="tg-pub-by-label">2017</p>
+
+    <div class="tg-pub-card">
+      <p class="tg-pub-title">It Is Time to Tackle Aspect! Some Insights to Help Clear Up the Tense/Aspect Mystery</p>
+      <p class="tg-pub-authors"><span class="tg-member-highlight">Schramm, A.</span></p>
+      <p class="tg-pub-venue">MinneTESOL Journal, 33(Fall)</p>
+    </div>
+
+    <p class="tg-pub-by-label">2016</p>
+
+    <div class="tg-pub-card">
+      <p class="tg-pub-title">Text Structure and the Online Processing of Expository Prose</p>
+      <p class="tg-pub-authors">van den Broek, P., Carlson, S., Kendeou, P., Bohn-Gettler, C., &amp; <span class="tg-member-highlight">Elfenbein, A.</span></p>
+      <p class="tg-pub-venue">Reader, 61, 81–108</p>
+    </div>
+
+    <div class="tg-pub-card">
+      <p class="tg-pub-title">The Desirable Difficulties of Studying Romanticism</p>
+      <p class="tg-pub-authors"><span class="tg-member-highlight">Elfenbein, A.</span></p>
+      <p class="tg-pub-venue">Pedagogy, 16(3), 445–479</p>
+    </div>
+
+    <div class="tg-pub-card">
+      <p class="tg-pub-title">Processing of Aspectual Meanings by Non-Native and Native English Speakers During Narrative Comprehension</p>
+      <p class="tg-pub-authors"><span class="tg-member-highlight">Schramm, A.</span>, &amp; <span class="tg-member-highlight">Mensink, M. C.</span></p>
+      <p class="tg-pub-venue">In New Approaches in English Linguistics: Building Bridges, pp. 251–280, John Benjamins</p>
+    </div>
+
+    <p class="tg-pub-by-label">2015</p>
+
+    <div class="tg-pub-card">
+      <p class="tg-pub-title">Comprehending the Impossible: What Role Do Selectional Restriction Violations Play?</p>
+      <p class="tg-pub-authors">Warren, T., <span class="tg-member-highlight">Milburn, E.</span>, Patson, N. D., &amp; Dickey, M. W.</p>
+      <p class="tg-pub-venue">Language, Cognition and Neuroscience, 30(8), 932–939</p>
+    </div>
+
+    <p class="tg-pub-by-label">2012</p>
+
+    <div class="tg-pub-card">
+      <p class="tg-pub-title">Prereading Questions and Online Text Processing</p>
+      <p class="tg-pub-authors">Lewis, M. R., &amp; <span class="tg-member-highlight">Mensink, M. C.</span></p>
+      <p class="tg-pub-venue">Discourse Processes, 49(5), 367–390 <a href="http://doi.org/10.1080/0163853X.2012.662801" target="_blank">DOI</a></p>
+    </div>
+
+    <p class="tg-pub-by-label">2008</p>
+
+    <div class="tg-pub-card">
+      <p class="tg-pub-title">Sweet Silent Thought: Alliteration and Resonance in Poetry Comprehension</p>
+      <p class="tg-pub-authors">Lea, B., Rapp, D., <span class="tg-member-highlight">Elfenbein, A.</span>, Mitchel, A., &amp; Romine, R. S.</p>
+      <p class="tg-pub-venue">Psychological Science, 19(7), 709–716</p>
+    </div>
+
+  </div>
+</div>
+
 <!-- ══════════════ SESSIONS ══════════════ -->
 <div class="tg-section" id="sessions">
   <div class="tg-section-rule">
-    <span class="tg-section-num">03</span>
+    <span class="tg-section-num">05</span>
     <h2 class="tg-section-title">Sessions</h2>
   </div>
 
@@ -1155,7 +1728,7 @@ full-width: true
 <!-- ══════════════ CONTACT ══════════════ -->
 <div class="tg-section dark" id="contact">
   <div class="tg-section-rule">
-    <span class="tg-section-num">04</span>
+    <span class="tg-section-num">06</span>
     <h2 class="tg-section-title">Contact &amp; Join</h2>
   </div>
   <div class="tg-contact-grid">
@@ -1224,6 +1797,37 @@ document.addEventListener('click', function(e) {
   }
   // Let the default mailto: behavior still run.
 });
+
+// Close mobile nav when a section link is clicked
+function tgMobileNav(e) {
+  document.querySelector('.tg-nav-mobile').classList.remove('open');
+  document.querySelector('.tg-nav-hamburger').setAttribute('aria-expanded', 'false');
+}
+
+// Scroll-spy: highlight active nav link based on scroll position
+(function () {
+  const sections = ['labs', 'history', 'publications', 'sessions', 'contact'];
+  const navLinks = document.querySelectorAll('.tg-nav-links a[href^="#"]');
+  function updateActive() {
+    let current = '';
+    for (const id of sections) {
+      const el = document.getElementById(id);
+      if (el && el.getBoundingClientRect().top <= 100) current = id;
+    }
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      link.classList.toggle('active', href === '#' + current || (current === '' && href === '#'));
+    });
+  }
+  window.addEventListener('scroll', updateActive, { passive: true });
+  updateActive();
+})();
+
+function tgToggleHistory(btn) {
+  const content = btn.nextElementSibling;
+  content.classList.toggle('open');
+  btn.textContent = content.classList.contains('open') ? 'Show less \u2191' : 'Read more \u2193';
+}
 
 function tgFilter(year, btn) {
   document.querySelectorAll('.tg-filter-btn').forEach(b => b.classList.remove('active'));

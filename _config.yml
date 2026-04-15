@@ -8,6 +8,8 @@ baseurl: ""
 navbar-links:
   About: "aboutme"
   Sessions: "/#sessions"
+  History: "/#history"
+  Publications: "/#publications"
   Members: "members"
   YouTube: "https://www.youtube.com/@textgroup/videos"
   Contact: "/#contact"
