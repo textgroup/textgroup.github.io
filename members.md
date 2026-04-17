@@ -2,6 +2,7 @@
 layout: page
 title: Members
 subtitle: Researchers in TextGroup
+published: false
 ---
 
 <style>
