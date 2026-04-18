@@ -2,142 +2,10 @@
 layout: page
 title: Members
 subtitle: Researchers in TextGroup
+full-width: true
 ---
 
-<style>
-:root {
-  --paper: #f8f6f1;
-  --ink: #1a1814;
-  --ink-mid: #4a4845;
-  --ink-muted: #8a8784;
-  --accent: #2d5a3d;
-  --accent-light: #e8f0eb;
-  --rule: #ddd9d0;
-  --serif: Georgia, 'Times New Roman', serif;
-  --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --mono: 'Courier New', Courier, monospace;
-}
-*, *::before, *::after { box-sizing: border-box; }
-body { font-family: var(--sans); background: var(--paper); color: var(--ink); margin: 0; }
-
-/* ── Nav ── */
-.m-nav {
-  position: sticky; top: 0; z-index: 100;
-  background: rgba(248,246,241,0.95);
-  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--rule);
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 5%; height: 48px;
-}
-.m-nav-brand {
-  font-family: var(--serif); font-size: 1.1rem; font-weight: 700;
-  color: var(--ink); text-decoration: none;
-}
-.m-nav-brand:hover { color: var(--accent); }
-.m-nav-links { display: flex; gap: 0.15rem; list-style: none; margin: 0; padding: 0; }
-.m-nav-links a {
-  font-size: 0.78rem; font-weight: 500; color: var(--ink-mid);
-  text-decoration: none; padding: 0.35rem 0.65rem; border-radius: 3px;
-  transition: color 0.15s, background 0.15s;
-}
-.m-nav-links a:hover, .m-nav-links a.active { color: var(--accent); background: var(--accent-light); }
-
-/* ── Page ── */
-.m-page { max-width: 1100px; margin: 0 auto; padding: 2.5rem 5% 4rem; }
-.m-page-title {
-  font-family: var(--serif); font-size: 2rem; font-weight: 700;
-  color: var(--ink); margin: 0 0 0.25rem;
-}
-.m-page-sub {
-  font-family: var(--sans); font-size: 0.9rem; color: var(--ink-muted);
-  margin: 0 0 2.5rem;
-}
-
-/* ── Section labels ── */
-.m-section-label {
-  font-family: var(--mono); font-size: 0.7rem; color: var(--ink-muted);
-  text-transform: uppercase; letter-spacing: 0.12em;
-  margin: 2.5rem 0 1.25rem; padding-bottom: 0.5rem;
-  border-bottom: 1px solid var(--rule);
-}
-.m-section-label:first-of-type { margin-top: 0; }
-
-/* ── Member cards ── */
-.m-grid {
-  display: flex; flex-direction: column; gap: 1.25rem;
-}
-.m-card {
-  display: grid;
-  grid-template-columns: 120px 1fr;
-  gap: 1.5rem;
-  border: 1px solid var(--rule);
-  border-radius: 8px;
-  padding: 1.5rem;
-  background: #fff;
-  transition: border-color 0.15s, box-shadow 0.15s;
-}
-.m-card:hover {
-  border-color: var(--accent);
-  box-shadow: 0 2px 12px rgba(45,90,61,0.06);
-}
-.m-card-photo {
-  display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
-}
-.m-avatar {
-  width: 100px; height: 100px; border-radius: 50%;
-  object-fit: cover; object-position: center top;
-  border: 3px solid var(--accent-light); background: var(--accent-light);
-}
-.m-role {
-  display: inline-block; font-size: 0.6rem; font-weight: 700;
-  text-transform: uppercase; letter-spacing: 0.08em;
-  color: var(--accent); background: var(--accent-light);
-  padding: 0.15rem 0.45rem; border-radius: 3px; text-align: center;
-}
-.m-card-body { min-width: 0; }
-.m-name {
-  font-family: var(--serif); font-size: 1.15rem; font-weight: 700;
-  color: var(--ink); margin: 0 0 0.15rem;
-}
-.m-affil {
-  font-size: 0.8rem; color: var(--ink-muted); margin: 0 0 0.6rem;
-}
-.m-bio {
-  font-size: 0.85rem; color: var(--ink-mid); line-height: 1.65;
-  margin: 0 0 0.75rem;
-}
-.m-papers-title {
-  font-size: 0.65rem; font-weight: 700; text-transform: uppercase;
-  letter-spacing: 0.1em; color: var(--ink-muted); margin: 0 0 0.35rem;
-}
-.m-papers-list {
-  list-style: none; padding: 0; margin: 0 0 0.75rem;
-}
-.m-papers-list li {
-  font-size: 0.78rem; color: var(--ink-mid); line-height: 1.45;
-  padding: 0.25rem 0 0.25rem 0.75rem;
-  border-left: 2px solid var(--rule);
-  margin-bottom: 0.2rem;
-}
-.m-links { display: flex; gap: 0.75rem; flex-wrap: wrap; }
-.m-link {
-  font-size: 0.78rem; font-weight: 600; color: var(--accent);
-  text-decoration: none; transition: color 0.15s;
-}
-.m-link:hover { text-decoration: underline; }
-
-/* ── Responsive ── */
-@media (max-width: 640px) {
-  .m-card {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-  .m-card-photo { align-items: center; }
-  .m-papers-list li { text-align: left; }
-  .m-links { justify-content: center; }
-  .m-nav-links a { font-size: 0.7rem; padding: 0.3rem 0.4rem; }
-}
-</style>
+<link rel="stylesheet" href="/assets/css/members.css">
 
 <!-- ══════════════ NAV ══════════════ -->
 <nav class="m-nav">
@@ -366,6 +234,29 @@ body { font-family: var(--sans); background: var(--paper); color: var(--ink); ma
         </ul>
         <div class="m-links">
           <a class="m-link" href="https://sites.google.com/site/michaelmensink/" target="_blank">Homepage &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Zae Myung Kim -->
+    <div class="m-card">
+      <div class="m-card-photo">
+        <img class="m-avatar" src="/assets/img/members/zae-myung-kim.jpg" alt="Zae Myung Kim" onerror="this.style.display='none'">
+      </div>
+      <div class="m-card-body">
+        <p class="m-name">Zae Myung Kim</p>
+        <p class="m-affil">University of Minnesota</p>
+        <p class="m-bio">Developing a &ldquo;meta-scaffolding paradigm&rdquo; that integrates discourse structures, dataset metadata, and metacognitive feedback into the training loop of large language models to stabilize learning and produce interpretable, coherent long-form text.</p>
+        <p class="m-papers-title">Selected works</p>
+        <ul class="m-papers-list">
+          <li>Improving Iterative Text Revision by Learning Where To Edit From Other Revision Tasks</li>
+          <li>Read, Revise, Repeat: A System Demonstration for Human-in-the-loop Iterative Text Revision</li>
+          <li>Threads of Subtlety: Detecting Machine-Generated Texts Through Discourse Motifs</li>
+          <li>Toward Evaluative Thinking: Meta Policy Optimization with Evolving Reward Models</li>
+          <li>Align to Structure: Aligning Large Language Models with Structural Information</li>
+        </ul>
+        <div class="m-links">
+          <a class="m-link" href="https://zaemyung.github.io" target="_blank">Homepage &rarr;</a>
         </div>
       </div>
     </div>
