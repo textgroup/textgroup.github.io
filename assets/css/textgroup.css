@@ -367,6 +367,33 @@
   padding: 0;
   border: none;
 }
+.tg-lab-head {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 0.75rem;
+}
+.tg-lab-head .tg-lab-name { margin: 0; }
+.tg-lab-logo {
+  flex: 0 0 auto;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--rule);
+  background: #fff;
+}
+.tg-lab-mono {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-light);
+  color: var(--accent);
+  font-family: var(--serif);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
 .tg-lab-meta {
   font-size: 0.82rem;
   color: var(--ink-mid);
